@@ -12,7 +12,7 @@ from envs import *
 from utils import *
 import logging
 import random
-import pytz import timezone
+from pytz import timezone
 
 ####################
 # INITIALISING BOT #
