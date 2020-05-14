@@ -1,3 +1,8 @@
-================ This is version 3.0.0 of ALPHAbot ====================
-Now using python telegram bot which is a package to deal with the API to handle callbacks and queries.
-Moving forward, the bot should no longer manually check for updates and store data in mem
+This is the ALPHAbot created for NS-Alpha LG to assist in administration for the entire lifegroup
+This is mainly done so by:
+    1. Storing upcoming events
+    2. Giving timely reminders as these events are approaching
+    3. Storing recent sermons that LG members may have missed
+    4. Sending broadcasts to all members via pm
+    5. Spamming the group when a call (i.e. on Zoom is started)
+    6. Staying cool while doing all these
