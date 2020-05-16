@@ -142,7 +142,7 @@ Traceback (most recent call last):
     context.user_data = default_user_data
   File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\callbackcontext.py", line 122, in user_data
     raise AttributeError("You can not assign a new value to user_data, see "
-AttributeError: You can not assign a new value to user_data, see https://git.io/fjxKe
+AttributeError: You can not assign a new value to user_data, see b 
 2020-04-22 18:38:13,444 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
 Traceback (most recent call last):
   File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
@@ -2864,3 +2864,2430 @@ Traceback (most recent call last):
   File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
     raise NetworkError('urllib3 HTTPError {0}'.format(error))
 telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 14:08:24,920 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8070>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:12:41,617 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8808>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:13:20,417 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8328>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:23,819 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8D18>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:34,846 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8DD8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:34,857 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8E80>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:34,858 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 14:28:34,858 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 14:28:35,860 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94898>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:35,861 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94D48>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:35,862 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB88B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 14:28:35,862 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB88F8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 14:28:35,863 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB88F8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB88F8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB88F8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 14:30:21,555 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 14:30:21,556 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 17:30:12,973 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8040>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:25,499 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 17:54:25,500 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 17:54:26,501 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933058>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:26,501 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933100>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:26,502 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x019331A8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:26,503 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 17:54:26,503 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 17:54:28,005 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94E80>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:28,005 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94D18>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:28,006 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94898>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:28,007 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 17:54:28,007 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8250>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 17:54:30,258 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8F28>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:30,259 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8148>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:30,259 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 17:54:30,260 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8598>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 17:54:30,260 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8598>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8598>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8598>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 18:03:24,315 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8778>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:03:30,665 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:04:23,386 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:04:31,324 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:04:36,334 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933238>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:17:54,268 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:20:03,817 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 18:29:46,698 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 18:29:46,699 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 20:34:24,166 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933568>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:24,170 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933730>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:24,170 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x019337D8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:24,180 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933880>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:24,180 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933880>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933880>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933880>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:25,181 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94928>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:25,182 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04E94D90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:25,182 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB87C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:25,182 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8B50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:25,183 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8B50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8B50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8B50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:26,683 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8EE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:26,684 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8E98>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:26,684 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8D18>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:26,684 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB89B8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:26,685 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB89B8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB89B8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB89B8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:28,936 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8778>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:28,937 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8910>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:28,937 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8F10>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:28,937 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB87F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:28,937 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB87F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB87F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB87F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:32,314 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB89B8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:32,315 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8EC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:32,315 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04EB8CA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:32,315 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933430>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:32,315 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933430>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933430>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x01933430>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2020-05-16 20:34:44,861 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:51,419 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connectionpool.HTTPSConnectionPool object at 0x04E26B20>, 'Connect timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/getUpdates
+2020-05-16 20:34:52,524 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 20:34:52,524 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 691, in urlopen
+    return self.urlopen(method, url, body, headers, retries,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 20:43:05,162 - JobQueue -                     ERROR - An uncaught error was raised while executing job test_job
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 49, in test_job
+    user_id = context.user_data['user_id']
+TypeError: 'NoneType' object is not subscriptable
+2020-05-16 21:01:33,207 - root -                     INFO - test log
+2020-05-16 21:07:12,217 - root -                     INFO - test
+2020-05-16 21:08:43,928 - root -                     INFO - <telegram.ext.jobqueue.JobQueue object at 0x040CFC10>
+2020-05-16 21:08:53,929 - root -                     INFO - timeout activated
+2020-05-16 21:08:53,929 - root -                     INFO - {'username': 'ollayf', 'user_id': 333647246, 'group_id': -1001200591015, 'permissions': 'coders', 'status': {'initiated': True, 'started': True, 'feedback': False, 'action': False, 'admin_menu': False, 'add_event': 0, 'add_teaching': 0, 'backend': False}, 'temp_list': [], 'temp_string': ''}
+2020-05-16 21:08:53,929 - root -                     INFO - None
+2020-05-16 21:12:29,037 - JobQueue -                     ERROR - An uncaught error was raised while executing job user_timeout
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 75, in user_timeout
+    user_id = user_data['user_id']
+TypeError: 'NoneType' object is not subscriptable
+2020-05-16 21:18:12,114 - telegram.ext.updater -                     ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 21:18:12,114 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 21:18:12,115 - JobQueue -                     ERROR - An uncaught error was raised while executing job user_timeout
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 225, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 68, in request
+    return self.request_encode_body(method, url, fields=fields,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 665, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 614, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\Hosea\AppData\Local\Programs\Python\Python38-32\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 82, in user_timeout
+    j_context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 21:21:10,821 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:21:20,820 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:21:30,821 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:21:40,820 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:21:50,821 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:22:00,820 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:22:10,820 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:22:20,820 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:22:27,371 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 95, in process_members
+    initiate_user(user_id, update, context) # in utils
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 193, in initiate_user
+    context.bot.send_message(chat_id=update.effective_message.from_user.id, \
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 243, in _request_wrapper
+    raise Unauthorized(message)
+telegram.error.Unauthorized: Forbidden: bot can't initiate conversation with a user
+2020-05-16 21:22:30,821 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:22:40,821 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:22:50,821 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:23:18,204 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:23:28,204 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:23:38,203 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:23:48,204 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 57, in call_spammer
+    current_call_list = j_context.bot_data['current_call']
+AttributeError: 'NoneType' object has no attribute 'bot_data'
+2020-05-16 21:24:11,292 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:24:21,294 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:24:31,292 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:24:41,256 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:24:51,272 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:25:01,265 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:25:11,270 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:25:21,261 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:25:31,254 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:25:41,271 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:25:51,274 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:26:01,270 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:26:11,334 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:26:21,266 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:26:31,374 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:26:41,308 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:26:51,277 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:27:01,263 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:27:11,262 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:27:21,289 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:27:31,779 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:27:41,305 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:27:51,321 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:28:01,266 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:28:11,269 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:28:21,276 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:28:31,428 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:28:41,261 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:28:51,266 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:29:01,328 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:29:11,266 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:29:21,224 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:29:31,256 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:29:41,272 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:29:51,284 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:30:01,321 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:30:11,244 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:30:21,248 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:30:31,259 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:30:41,277 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:30:51,772 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:31:01,256 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:31:11,271 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:31:21,281 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:31:31,261 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:31:41,264 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:31:51,264 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:32:01,260 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:32:11,268 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:32:21,281 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:32:31,248 - JobQueue -                     ERROR - An uncaught error was raised while executing job call_spammer
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 292, in tick
+    job.run(self._dispatcher)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\jobqueue.py", line 430, in run
+    self.callback(CallbackContext.from_job(self, dispatcher))
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 64, in call_spammer
+    context.bot.send_message(chat_id=chat_id,\
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 245, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2020-05-16 21:33:26,067 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 95, in process_members
+    initiate_user(user_id, update, context) # in utils
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 193, in initiate_user
+    context.bot.send_message(chat_id=update.effective_message.from_user.id, \
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 243, in _request_wrapper
+    raise Unauthorized(message)
+telegram.error.Unauthorized: Forbidden: bot can't initiate conversation with a user

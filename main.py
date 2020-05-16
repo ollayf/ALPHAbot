@@ -50,8 +50,12 @@ for coder in coders:
 # You can create a context for the job to be accessed via context.job.context: object obj
 
 def call_spammer(context):
-    current_call_list = context.bot_data['current_call']
-    chat_id = context.bot_data['chat_id']
+    '''
+    To be called when a call is started every 10 minutes after starting the call
+    '''
+    j_context = context.job.context
+    current_call_list = j_context.bot_data['current_call']
+    chat_id = j_context.bot_data['chat_id']
     # if the call has been ended remove without any messages
     if current_call_list == []:
         context.job.schedule_removal
@@ -67,11 +71,15 @@ def user_timeout(context):
     - ends the conversation
     - clears user_data
     '''
+    # for easier access to context
+    j_context = context.job.context
     # for easier access to user_data
-    user_data = context.user_data
+    user_data = j_context.user_data
     user_id = user_data['user_id']
+    # resets user session
     clear_user_memory(user_data, True)
-    context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
+    # informs the user
+    j_context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
     return
 
 ############
@@ -124,6 +132,8 @@ def start(update, context):
     elif not context.user_data['status']['initiated']:
         context.user_data['status']['initiated'] = True
         context.user_data['status']['started'] = True
+        # set timeout in 15 mins
+        jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
         context.bot.send_message(chat_id=update.effective_message.from_user.id, \
             text=first_start_msg.format(username))
 
@@ -131,7 +141,7 @@ def start(update, context):
     else:
         context.user_data['status']['started'] = True
         # set timeout in 15 mins
-        jobqueuer.run_once(user_timeout)
+        jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
         update.message.reply_text(text=start_msg.format(username))
 
 dispatcher.add_handler(CommandHandler('start', start), group=1)
@@ -175,19 +185,20 @@ def start_call(update, context):
     
     else:
         if context.bot_data['current_call'] == []:
-            first_occurrence = datetime.datetime.now() + datetime.timedelta(minutes=10)
+            bot_print(update, 'Creating spammer')
+            # spams the chat every 10 minutes
             jobqueuer.run_repeating(callback=call_spammer, interval=datetime.timedelta(minutes=10),\
-                first=first_occurrence)
+                first=datetime.timedelta(minutes=15), context=context)
         url = context.args[0]
         # gets the name of the platform of the ongoing call
         platform = process_url(update, url)
+        chat_id = context.bot_data['chat_id']
         # In case the process_url function doesnt support this platform
         if platform == None:
-            context.bot.send_message(chat_id = BOT_TEST_ID, text=not_reg_platform_error)
+            context.bot.send_message(chat_id = chat_id, text=not_reg_platform_error)
         else:
             context.bot_data['current_call'] = [platform, url]
-            context.bot.send_message(chat_id = BOT_TEST_ID, text=f'New call started on {platform} \
-at {url}.')
+            context.bot.send_message(chat_id = chat_id, text=f'New call started on {platform}')
         
     
 dispatcher.add_handler(CommandHandler('start_call', start_call), group=1)
@@ -206,7 +217,8 @@ def end_call(update, context):
     # if there is an ongoing call and user wants to end it
     else:
         context.bot_data['current_call'] = []
-        context.bot.send_message(chat_id = BOT_TEST_ID, text=call_ended_msg)
+        chat_id = context.bot_data['chat_id']
+        context.bot.send_message(chat_id = chat_id, text=call_ended_msg)
     
 dispatcher.add_handler(CommandHandler('end_call', end_call), group=1)
 
@@ -737,12 +749,6 @@ def remind_events(context: telegram.ext.CallbackContext):
 
 event_reminder = jobqueuer.run_daily(callback=remind_events,\
     time=datetime.time(8, 0, 0, 0, tzinfo=timezone('Singapore')))
-
-# You can remove this job queued by
-# job_weekly.enabled = False
-# OR
-# job_minute.schedule_removal() 
-# this stops it from running after the current interval is over
 
 # send a message to people that inputted an invalid command (lowest priority)
 @send_typing_action
