@@ -508,9 +508,10 @@ def process_url(update, url):
     try:
         requests.get(url)
     # fails if the request cannot be sent
-    except requests.ConnectionError:
+    except Exception:
         update.effective_message.reply_text(text=invalid_call_url)
         raise
+
     else:
         if url.__contains__('zoom.us'):
             platform = 'Zoom'
@@ -520,6 +521,9 @@ def process_url(update, url):
         
         elif url.__contains__('join.skype.com'):
             platform = 'Skype'
+        
+        else:
+            platform = None
         
         return platform
 

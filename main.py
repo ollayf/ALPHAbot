@@ -44,6 +44,36 @@ logging.basicConfig(filename='storage/error_log.md', format='%(asctime)s - %(nam
 for coder in coders:
     updater.bot.send_message(coder, initialised_msg)
 
+######################
+# CALLBACK FUNCTIONS #
+######################
+# You can create a context for the job to be accessed via context.job.context: object obj
+
+def call_spammer(context):
+    current_call_list = context.bot_data['current_call']
+    chat_id = context.bot_data['chat_id']
+    # if the call has been ended remove without any messages
+    if current_call_list == []:
+        context.job.schedule_removal
+        # message to be spammed
+    else:
+        context.bot.send_message(chat_id=chat_id,\
+            text=f'Currently ongoing call on {current_call_list[0]} at {current_call_list[1]}!')
+
+
+def user_timeout(context):
+    '''
+    Callback function to be called after 15 mins of the starting the bot. It:
+    - ends the conversation
+    - clears user_data
+    '''
+    # for easier access to user_data
+    user_data = context.user_data
+    user_id = user_data['user_id']
+    clear_user_memory(user_data, True)
+    context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
+    return
+
 ############
 # COMMANDS #
 ############
@@ -90,18 +120,19 @@ def start(update, context):
         update.effective_message.reply_text(text=alr_started_msg.format(username))
         return
 
-
-    # for normal users
-    if context.user_data['status']['initiated']:
-        context.user_data['status']['started'] = True
-        update.message.reply_text(text=start_msg.format(username))
-
     # if they havent been initiated, pm them the first start msg
     elif not context.user_data['status']['initiated']:
         context.user_data['status']['initiated'] = True
         context.user_data['status']['started'] = True
         context.bot.send_message(chat_id=update.effective_message.from_user.id, \
             text=first_start_msg.format(username))
+
+    # for normal users
+    else:
+        context.user_data['status']['started'] = True
+        # set timeout in 15 mins
+        jobqueuer.run_once(user_timeout)
+        update.message.reply_text(text=start_msg.format(username))
 
 dispatcher.add_handler(CommandHandler('start', start), group=1)
 
@@ -135,7 +166,7 @@ def start_call(update, context):
         update.effective_message.reply_text(text=function_fail_msg)
         return
     # check the user permissions
-    elif context.user_data['permissions'] != 'coders' or context.user_data['permissions'] != 'admins':
+    elif context.user_data['permissions'] != 'coders' and context.user_data['permissions'] != 'admins':
         update.effective_message.reply_text(text=permission_fail_msg)
     # there must only be one argument which is the url
     elif not len(context.args) == 1:
@@ -143,12 +174,21 @@ def start_call(update, context):
         return
     
     else:
+        if context.bot_data['current_call'] == []:
+            first_occurrence = datetime.datetime.now() + datetime.timedelta(minutes=10)
+            jobqueuer.run_repeating(callback=call_spammer, interval=datetime.timedelta(minutes=10),\
+                first=first_occurrence)
         url = context.args[0]
         # gets the name of the platform of the ongoing call
         platform = process_url(update, url)
-        context.bot_data['current_call'] = [platform, url]
-        context.bot.send_message(chat_id = BOT_TEST_ID, text=f'New call started on {platform} \
+        # In case the process_url function doesnt support this platform
+        if platform == None:
+            context.bot.send_message(chat_id = BOT_TEST_ID, text=not_reg_platform_error)
+        else:
+            context.bot_data['current_call'] = [platform, url]
+            context.bot.send_message(chat_id = BOT_TEST_ID, text=f'New call started on {platform} \
 at {url}.')
+        
     
 dispatcher.add_handler(CommandHandler('start_call', start_call), group=1)
 

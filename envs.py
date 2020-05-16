@@ -34,7 +34,7 @@ default_bot_data = {
 "members": members if type(members)==dict else {},
 'admins': admins if type(members)==dict else {},
 'coders': coders,
-'permissions_changed': [],
+'permissions_changed': [], # platform, url
 'events': {},
 'library': {
     'limit': 3, # for testing usually put 6 
@@ -168,6 +168,11 @@ quit_fail_msg = 'bruh there\'s nothing to quit lol'
 call_format_error = 'Wrong format inputted. It should be /start_call <url>'
 invalid_call_url = 'Invalid url input'
 call_not_started_msg = 'There is ongoing calls currently... Wake up your idea pls'
+not_reg_platform_error = 'This is an unregistered call platform, please contact yu fei to update the code'
+
+user_timeout_msg = '15 minutes is up, I will automatically be going to sleep. Please remember \
+to end the conversation when not in use.\nYou can also use /events, /library, /start_call \
+/end_call without starting me up.'
 
 ###############################
 # For adding/ deleting events #

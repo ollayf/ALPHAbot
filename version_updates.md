@@ -1,3 +1,7 @@
+================ ALPHAbot v3.1.0 =====================
+- Added conversation timeouts (15mins)
+- Added spam chat with a call has started
+
 ================ ALPHAbot v3.0.1 =====================
 - Dockerised ALPHAbot
 - Version Updates separated from README.md which now only describes what ALPHAbot does in the latest update

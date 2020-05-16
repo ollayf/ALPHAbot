@@ -2700,3 +2700,63 @@ Traceback (most recent call last):
   File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
     raise NetworkError('urllib3 HTTPError {0}'.format(error))
 telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2020-05-16 10:44:49,353 - telegram.vendor.ptb_urllib3.urllib3.connectionpool -                     WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x04284E38>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0/sendMessage
+2020-05-16 10:46:18,941 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 84, in process_members
+    user_id = update.message.from_user.id
+AttributeError: 'NoneType' object has no attribute 'from_user'
+2020-05-16 10:54:21,180 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 98, in typing_func
+    return func(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 183, in start_call
+    platform = process_url(update, url)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 509, in process_url
+    requests.get(url)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'yeetus': No schema supplied. Perhaps you meant http://yeetus?
+2020-05-16 10:57:52,052 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 98, in typing_func
+    return func(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 185, in start_call
+    platform = process_url(update, url)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 509, in process_url
+    requests.get(url)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'yeetus': No schema supplied. Perhaps you meant http://yeetus?
