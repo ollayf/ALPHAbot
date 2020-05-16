@@ -250,6 +250,34 @@ def start(update, context):
 
 dispatcher.add_handler(CommandHandler('start', start), group=1)
 
+# /broadcast <msg>
+@send_typing_action
+def broadcast(update, context): 
+    # returns fail msg if the user is currently in an action
+    if context.user_data['status']['action']:
+        update.effective_message.reply_text(text=function_fail_msg)
+        return
+    # check the user permissions
+    elif context.user_data['permissions'] != 'coders' and context.user_data['permissions'] != 'admins':
+        update.effective_message.reply_text(text=permission_fail_msg)
+
+    # if theres no other issue
+    else:
+        # converts message into a string
+        message = context.args
+        message = ' '.join(message)
+        # makes sure sender is not a recipient
+        sender_id = update.message.from_user.id
+        for member_id in tuple(context.bot_data['members'].values()):
+            if sender_id == member_id:
+                continue
+            context.bot.send_message(chat_id=member_id, text= f'{message}')
+        
+        # informs the sender the message is sent
+        update.message.reply_text(text=broadcasted_fin_msg)
+
+dispatcher.add_handler(CommandHandler('broadcast', broadcast), group=1)
+
 ###################
 # MUST BE STARTED #
 ###################

@@ -105,8 +105,9 @@ Commands you can use without doing /start (for quick use):\n\
 /start_call -- to be called when you start a call on any platform (only available for admins)\n\
 /end_call -- ends the call that is currently on (only available for admins)\n\
 /birthdays -- shows the full list of birthdays as well as the closest birthday.\n\
-/help -- can be used at any time give the list of possible functions'
+/help -- can be used at any time to give the list of possible functions'
 
+broadcasted_fin_msg = 'Message broadcasted! Thanks for serving'
 middle_of_action_msg = 'Command failed as you are currently in an action!'
 
 cfmation_msg=\
