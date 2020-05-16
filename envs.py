@@ -41,8 +41,7 @@ default_bot_data = {
     'teachings': {}
     },
 'current_call': [],
-'birthdays': {},
-'identity': {}
+'birthdays': {}
 }
 
 default_user_data = {
@@ -150,6 +149,8 @@ call_ended_msg = 'Call has ended'
 # error messages #
 ##################
 
+not_started_error = 'Hello... Please start a conversation with me first with /start'
+not_admined_error = 'You must be in the admin menu to access this command.'
 not_integer_error = 'Value is not an integer. Try inputting index again'
 out_of_range_error = 'Index out of range'
 one_arg_error = 'Only 1 argument allowed to be input'

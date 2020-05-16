@@ -417,23 +417,29 @@ def bot_print(update, text):
     update.message.reply_text(text=text)
 
             
-def clear_user_memory(user_data, end=False):
+def clear_user_memory(user_data, end=False, quit=False):
     '''
     in an event such as ending the bot, reset all the attributes of the user to default
     '''
     status = user_data['status']
     status['feedback'] = False
     status['action'] = False
-    status['admin_menu'] = False
     status['add_event'] = 0
     status['add_teaching'] = 0
-    status['backend'] = False
 
     user_data['temp_list'] = []
     user_data['temp_string'] = ''
 
+    # if end, clear everything includes quit
     if end:
         status['started'] = False
+        status['admin_menu'] = False
+        status['backend'] = False
+    
+    # quits without ending
+    elif quit:
+        status['admin_menu'] = False
+        status['backend'] = False
 
 
 def convert_dict_to_str(relevant_dict, teaching= False):

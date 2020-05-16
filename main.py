@@ -99,52 +99,10 @@ def process_members(update, context):
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_members), group=0) # gives most prirority
 
-## prev used to check whether the status dicts were linked (TO BE REMOVED)
-# def check_identity(update, context):
-#     if context.bot_data['identity'] == {}:
-#         context.bot_data['identity'] = context.user_data['status']
-#         bot_print(update, 'status dict set')
-#     else:
-#         result = (context.user_data['status'] is context.bot_data['identity'])
-#         bot_print(update, result)
 
-# dispatcher.add_handler(CommandHandler('check_identity', check_identity), group=1)
-
-# msg sent when /start
-@send_typing_action
-def start(update, context):
-    # for easier acces to user's status dict
-    status_dict = context.user_data['status']
-
-    # if the user is supposed to be in admin menu, in action or in backend, fail this action
-    if status_dict['admin_menu'] or status_dict['action'] or status_dict['backend']:
-        update.effective_message.reply_text(text=function_fail_msg)
-        return
-
-    # gets the persons username
-    username = update.effective_message.from_user.username
-
-    if context.user_data['status']['started']:
-        update.effective_message.reply_text(text=alr_started_msg.format(username))
-        return
-
-    # if they havent been initiated, pm them the first start msg
-    elif not context.user_data['status']['initiated']:
-        context.user_data['status']['initiated'] = True
-        context.user_data['status']['started'] = True
-        # set timeout in 15 mins
-        jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
-        context.bot.send_message(chat_id=update.effective_message.from_user.id, \
-            text=first_start_msg.format(username))
-
-    # for normal users
-    else:
-        context.user_data['status']['started'] = True
-        # set timeout in 15 mins
-        jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
-        update.message.reply_text(text=start_msg.format(username))
-
-dispatcher.add_handler(CommandHandler('start', start), group=1)
+#######################
+# CAN RUN IN ANY MODE #
+#######################
 
 # /help
 @send_typing_action
@@ -200,7 +158,6 @@ def start_call(update, context):
             context.bot_data['current_call'] = [platform, url]
             context.bot.send_message(chat_id = chat_id, text=f'New call started on {platform}')
         
-    
 dispatcher.add_handler(CommandHandler('start_call', start_call), group=1)
 
 # /end_call
@@ -221,34 +178,6 @@ def end_call(update, context):
         context.bot.send_message(chat_id = chat_id, text=call_ended_msg)
     
 dispatcher.add_handler(CommandHandler('end_call', end_call), group=1)
-
-# /end
-def end(update, context):
-    # quick access to user_data
-    user_data = context.user_data
-    # if not alr ready in a conversation
-    if not user_data['status']['started']:
-        # generates a random fail end message
-        no_of_end_msgs = len(fail_end_msgs)
-        end_msg_index = random.randint(0, no_of_end_msgs-1)
-        end_msg = fail_end_msgs[end_msg_index]
-        splitted_end_msg = end_msg.split('_')
-        for msg in splitted_end_msg:
-            update.message.reply_text(text=msg)
-    
-    # in normal circumstances
-    else:
-        # resets everything
-        clear_user_memory(user_data, True)
-        # generates a random end message
-        no_of_end_msgs = len(end_msgs)
-        end_msg_index = random.randint(0, no_of_end_msgs-1)
-        end_msg = end_msgs[end_msg_index]
-        splitted_end_msg = end_msg.split('_')
-        for msg in splitted_end_msg:
-            update.message.reply_text(text=msg)
-    
-dispatcher.add_handler(CommandHandler('end', end), group=1)
 
 # sends the content of alpha events into the chat
 @send_typing_action
@@ -285,11 +214,82 @@ def display_lib(update, context):
 
 dispatcher.add_handler(CommandHandler('library', display_lib), group=1)
 
+# msg sent when /start
+@send_typing_action
+def start(update, context):
+    # for easier acces to user's status dict
+    status_dict = context.user_data['status']
+
+    # if the user is supposed to be in admin menu, in action or in backend, fail this action
+    if status_dict['admin_menu'] or status_dict['action'] or status_dict['backend']:
+        update.effective_message.reply_text(text=function_fail_msg)
+        return
+
+    # gets the persons username
+    username = update.effective_message.from_user.username
+
+    if context.user_data['status']['started']:
+        update.effective_message.reply_text(text=alr_started_msg.format(username))
+        return
+
+    # if they havent been initiated, pm them the first start msg
+    elif not context.user_data['status']['initiated']:
+        context.user_data['status']['initiated'] = True
+        context.user_data['status']['started'] = True
+        # set timeout in 15 mins
+        jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
+        context.bot.send_message(chat_id=update.effective_message.from_user.id, \
+            text=first_start_msg.format(username))
+
+    # for normal users
+    else:
+        context.user_data['status']['started'] = True
+        # set timeout in 15 mins
+        jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
+        update.message.reply_text(text=start_msg.format(username))
+
+dispatcher.add_handler(CommandHandler('start', start), group=1)
+
+###################
+# MUST BE STARTED #
+###################
+
+# /end
+def end(update, context):
+    # quick access to user_data
+    user_data = context.user_data
+    # if not alr ready in a conversation
+    if not user_data['status']['started']:
+        # generates a random fail end message
+        no_of_end_msgs = len(fail_end_msgs)
+        end_msg_index = random.randint(0, no_of_end_msgs-1)
+        end_msg = fail_end_msgs[end_msg_index]
+        splitted_end_msg = end_msg.split('_')
+        for msg in splitted_end_msg:
+            update.message.reply_text(text=msg)
+    
+    # in normal circumstances
+    else:
+        # resets everything
+        clear_user_memory(user_data, True)
+        # generates a random end message
+        no_of_end_msgs = len(end_msgs)
+        end_msg_index = random.randint(0, no_of_end_msgs-1)
+        end_msg = end_msgs[end_msg_index]
+        splitted_end_msg = end_msg.split('_')
+        for msg in splitted_end_msg:
+            update.message.reply_text(text=msg)
+    
+dispatcher.add_handler(CommandHandler('end', end), group=1)
+
 # to collect feedback from anybody
 @send_typing_action
 def give_feedback(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)
     elif not context.user_data['status']['feedback']:
         # events_dict feedback status to True
@@ -302,7 +302,7 @@ def give_feedback(update, context):
 dispatcher.add_handler(CommandHandler('feedback', give_feedback), group=1)
 
 #######################
-# COMMANDS FOR ADMINS_dict #
+# COMMANDS FOR ADMINS #
 #######################
 
 # access the admin menu /admin_menu
@@ -336,8 +336,12 @@ dispatcher.add_handler(CommandHandler('admin_menu', admin_session), group=1)
 # /add_event
 @send_typing_action
 def add_event(update, context):
+    # makes sure user has accessed admin menu
+    if not context.user_data['status']['admin_menu']:
+        update.message.reply_text(text=not_admined_error)
+        return
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)
         return
     else:
@@ -350,8 +354,12 @@ dispatcher.add_handler(CommandHandler('add_event', add_event), group=1)
 # /add_whole_event
 @send_typing_action
 def add_whole_event(update, context):
+    # makes sure user has accessed admin menu
+    if not context.user_data['status']['admin_menu']:
+        update.message.reply_text(text=not_admined_error)
+        return
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)  
         return
     
@@ -365,8 +373,12 @@ dispatcher.add_handler(CommandHandler('add_whole_event', add_whole_event), group
 # /del_event
 @send_typing_action
 def del_event(update, context):
+    # makes sure user has accessed admin menu
+    if not context.user_data['status']['admin_menu']:
+        update.message.reply_text(text=not_admined_error)
+        return
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)  
         return
     
@@ -390,8 +402,12 @@ dispatcher.add_handler(CommandHandler('del_event', del_event), group=1)
 # /add_teaching
 @send_typing_action
 def add_teaching(update, context):
+    # makes sure user has accessed admin menu
+    if not context.user_data['status']['admin_menu']:
+        update.message.reply_text(text=not_admined_error)
+        return
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)
         return
     else:
@@ -404,8 +420,12 @@ dispatcher.add_handler(CommandHandler('add_teaching', add_teaching), group=1)
 # /add_whole_teaching
 @send_typing_action
 def add_whole_teaching(update, context):
+    # makes sure user has accessed admin menu
+    if not context.user_data['status']['admin_menu']:
+        update.message.reply_text(text=not_admined_error)
+        return
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)
         return
     else:
@@ -418,8 +438,12 @@ dispatcher.add_handler(CommandHandler('add_whole_teaching', add_whole_teaching),
 # /del_teaching
 @send_typing_action
 def del_teaching(update, context):
+    # makes sure user has accessed admin menu
+    if not context.user_data['status']['admin_menu']:
+        update.message.reply_text(text=not_admined_error)
+        return
     # dont run command if the user is currently doing an action
-    if context.user_data['status']['action']:
+    elif context.user_data['status']['action']:
         update.effective_message.reply_text(text=middle_of_action_msg)
         return
 
@@ -704,7 +728,7 @@ dispatcher.add_handler(CommandHandler('quit', quit), group=1)
 # for testing the daily updates
 @send_typing_action
 def update(update, context):
-    daily_events_update(context)
+    daily_events_update(dispatcher)
     bot_print(update, 'Daily Update Done!')
 
 dispatcher.add_handler(CommandHandler('update', update), group=1)
@@ -733,11 +757,15 @@ def process_msg(update, context):
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 
+##############
+# FIXED JOBS #
+##############
+
 # collect confirmation every week on Thursday 1800hrs
 @send_typing_action
 def collect_cfmation(context: telegram.ext.CallbackContext):
     # collect confirmation
-    context.bot.send_message(chat_id= f'{BOT_TEST_ID}', text=cfmation_msg)
+    dispatcher.bot.send_message(chat_id= f'{BOT_TEST_ID}', text=cfmation_msg)
 cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, interval=datetime.timedelta(days=7),\
 first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
 
@@ -745,7 +773,7 @@ first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
 @send_typing_action
 def remind_events(context: telegram.ext.CallbackContext):
     # send reminders or remove events accordingly to every user registered as a member
-    daily_events_update(context)
+    daily_events_update(dispatcher)
 
 event_reminder = jobqueuer.run_daily(callback=remind_events,\
     time=datetime.time(8, 0, 0, 0, tzinfo=timezone('Singapore')))
@@ -753,8 +781,7 @@ event_reminder = jobqueuer.run_daily(callback=remind_events,\
 # send a message to people that inputted an invalid command (lowest priority)
 @send_typing_action
 def unknown(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text='That\'s not a\
-    real command fool!')
+    update.message.reply_text(text='That\'s not a real command fool!')
 dispatcher.add_handler(MessageHandler(Filters.command, unknown), group=1)
 
 
