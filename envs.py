@@ -27,6 +27,33 @@ members = {'ollayff':678686611, 'ollayf':333647246}
 # parse mode for bolding,
 defaults_updater = Defaults(quote=True, parse_mode=ParseMode.HTML)
 
+# default msg to be sent out for confirmation
+cfmation_msg=\
+"""Confirmation for LG & SVC:balloon:
+
+
+SERVICE(time):wedding::heart_eyes:
+Coming:grinning::
+
+
+
+
+
+
+CMI:cry::
+
+
+
+
+LG(time/post svc):raising_hand:🏼♂
+
+Coming:grinning::
+
+
+
+
+CMI:cry::"""
+
 # only this bot_data attribute needs to be a dict object
 # the rest must be defaultdict object
 default_bot_data = {
@@ -35,6 +62,11 @@ default_bot_data = {
 'admins': admins if type(members)==dict else {},
 'coders': coders,
 'permissions_changed': [], # platform, url
+'cfm': {
+    'active': True,
+    'cfm_msg': cfmation_msg,
+    'temp_msg': ''
+    },
 'events': {},
 'library': {
     'limit': 3, # for testing usually put 6 
@@ -52,6 +84,8 @@ default_user_data = {
 'status': {
     # for members
     'initiated': False, 'started': False, 'feedback': False, 'action': False,
+    # for cfm IC
+    'cfm_settings': False, 'change_msg': 0,
     # for admins
     'admin_menu': False, 'add_event': 0, 'add_teaching': 0,
     # for coders
@@ -109,32 +143,6 @@ Commands you can use without doing /start (for quick use):\n\
 
 broadcasted_fin_msg = 'Message broadcasted! Thanks for serving'
 middle_of_action_msg = 'Command failed as you are currently in an action!'
-
-cfmation_msg=\
-"""Confirmation for LG & SVC:balloon:
-
-
-SERVICE(time):wedding::heart_eyes:
-Coming:grinning::
-
-
-
-
-
-
-CMI:cry::
-
-
-
-
-LG(time/post svc):raising_hand:🏼♂
-
-Coming:grinning::
-
-
-
-
-CMI:cry::"""
 
 lib_empty_msg = 'Sorry, the library is currently empty, please come back again next time.'
 events_empty_msg = 'There are no upcoming evens sadly...*sadness doggo noises*'
@@ -205,6 +213,16 @@ add_teaching_fin = 'New teaching saved. Thanks for serving'
 add_teaching_limit = 'Since there is currently more than {}, the oldest teaching will be removed \
 from the library'
 
+###########
+# FOR CFM #
+###########
+
+cfm_restarted = 'Confirmation will be sent out starting from next Friday!'
+cfm_stopped = 'Confirmation message will no longer be sent out automatically :('
+cfm_change_init = 'What is the new confirmation message?'
+cfm_change_fin = 'Confirmation message changed. Thanks for serving.'
+cfm_once_fin = 'Confirmation message changed temporarily. Thanks for serving.'
+
 #################
 # BACKEND TINGZ #
 #################
@@ -232,6 +250,20 @@ Sends a message to the group that the call is on, don\'t say bojio.',
         'end': 'ends the conversation with me :(',
         'admin_menu': 'Opens the menu of functions you can use as an admin',
         'base_menu': ''
+        },
+
+    'confirmation':{ # /cfm_settings
+        'change_msg': 'changes the confirmation message that is sent out every week',
+        'change_once': 'changes the confirmation just for one time',
+        'stop_msg': 'stops automatically sending the confirmation message',
+        'start_msg': 'restarts the weekly automatic confirmation message'
+        },
+    
+    'birthday':{ # /bday_settings
+        'add_bday': 'adds a birthday into the memory',
+        'remove_bday': 'removes a birthday stored',
+        'default_bdays': 'sets the default list of bdays',
+        'clear_bdays': 'clear all bdays that are currently saved in system'
         },
 
     'admin_menu' : { # the mode activated after /admin_menu
