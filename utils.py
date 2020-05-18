@@ -10,7 +10,28 @@ from envs import *
 import logging
 import requests
 
-def getDatetimeOfNextXDay(isoweekday, hour, zone='Singapore'):
+def manual_convert_SGT(dateTime):
+    '''
+    Manually converts datetime objects to UTC timing to be taken in by ptb
+    '''
+    assert isinstance(dateTime, (datetime.datetime, datetime.time)), \
+        'Must be datetime.time or datetime.datetime obj'
+    assert dateTime.tzinfo == None, 'Must be a naive datetime.time or datetime.datetime object!'
+    # if it is a datetime.datetime obj
+    if isinstance(dateTime, datetime.datetime):
+        diff = datetime.timedelta(hours=8)
+        dateTime -= diff
+    # else if it is a datetime.time obj
+    else:
+        hour = dateTime.hour - 8
+        # account for if the hour is a value less than 8
+        if hour < 0:
+            hour = 24 - hour
+        dateTime = dateTime.replace(hour=hour)
+    # returns the converted times
+    return dateTime
+
+def getDatetimeOfNextXDay(isoweekday, hour):
     '''
     Returns a datetime.datetime object with time zone of Singapore, at 0000 hours
     of the date of the iso weekday
@@ -27,9 +48,10 @@ def getDatetimeOfNextXDay(isoweekday, hour, zone='Singapore'):
     if days_ahead <= 0: # Target day already happened this week
         days_ahead += 7
     date = today + datetime.timedelta(days=days_ahead)
-    dateTime = datetime.datetime(date.year, date.month, date.day, hour, 0, 0, tzinfo=timezone(zone))
+    dateTime = datetime.datetime(date.year, date.month, date.day, hour, 0, 0)
+    dateTime = manual_convert_SGT(dateTime)
     return dateTime
-
+    
 def get_next_day(hour):
     '''
     gets the format of the next day to be passed into the script in local SG timezone

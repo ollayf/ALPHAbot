@@ -793,24 +793,27 @@ dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 @send_typing_action
 def collect_cfmation(context: telegram.ext.CallbackContext):
     # collect confirmation
-    dispatcher.bot.send_message(chat_id= f'{BOT_TEST_ID}', text=cfmation_msg)
+    chat_id = dispatcher.bot_data['chat_id']
+    dispatcher.bot.send_message(chat_id= chat_id, text=cfmation_msg)
 cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, interval=datetime.timedelta(days=7),\
 first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
 
 # daily send msg for daily events
 @send_typing_action
 def remind_events(context: telegram.ext.CallbackContext):
+    dispatcher.bot.send_message(chat_id = 333647246, text='UPDATE ATTEMPED') # NEW ADDED
     # send reminders or remove events accordingly to every user registered as a member
     daily_events_update(dispatcher)
 
 event_reminder = jobqueuer.run_daily(callback=remind_events,\
-    time=datetime.time(8, 0, 0, 0, tzinfo=timezone('Singapore')))
+    time=manual_convert_SGT(datetime.time(8, 0, 0, 0)))
 
 # send a message to people that inputted an invalid command (lowest priority)
 @send_typing_action
 def unknown(update, context):
     update.message.reply_text(text='That\'s not a real command fool!')
 dispatcher.add_handler(MessageHandler(Filters.command, unknown), group=1)
+
 
 
 print('polling')
