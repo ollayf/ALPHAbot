@@ -1,11 +1,11 @@
+================ ALPHAbot v3.1.1 =====================
+- Hot fix for timezones
+
 ================ ALPHAbot v3.1.0 =====================
 - Added conversation timeouts (15mins)
 - Added spam chat with a call has started
 - Added broadcast function
 - Added hidden coders only update functions for immediate updates
-
-================ ALPHAbot v3.0.2 =====================
-- Hot fix for timezones
 
 ================ ALPHAbot v3.0.1 =====================
 - Dockerised ALPHAbot
