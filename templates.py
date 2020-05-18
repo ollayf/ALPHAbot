@@ -17,3 +17,20 @@ def CHANGE(update, context):
         update.message.reply_text(text= str(TO_CHANGE))
 
 dispatcher.add_handler(CommandHandler('CHANGE', CHANGE), group=1)
+
+
+# /CHANGE
+@send_typing_action
+def CHANGE(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+
+    # if no other issue
+    else:
+        
+
+dispatcher.add_handler(CommandHandler('CHANGE', CHANGE), group=1)

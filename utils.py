@@ -558,3 +558,19 @@ def process_url(update, url):
 # if __name__ == '__main__':
 #     event = convert_to_bold('Ytd\nDes: des pa cito que\nLoc: loc\nDT: dt', True, '<b>title</b>')
 #     print(event)
+
+def menu_activated(user_data):
+    '''
+    Checks if any menu is currently activated
+    Returns True if it is and False if it isn't
+    '''
+    menus = ['admin_menu', 'backend', 'confirmation', 'birthday']
+    status_dict = user_data['status']
+    result = False
+    # checks if any of the menus are accessed currently
+    for menu in menus:
+        # if this condition is never invoked, result will return False
+        if status_dict[menu]:
+            result = True
+
+    return result

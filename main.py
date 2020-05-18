@@ -329,6 +329,80 @@ def give_feedback(update, context):
 
 dispatcher.add_handler(CommandHandler('feedback', give_feedback), group=1)
 
+################################
+# COMMANDS FOR CONFIRMATION IC #
+################################
+
+
+
+# /change_msg
+@send_typing_action
+def change_msg(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+
+    # if no other issue
+    else:
+        context.user_data['cfm']['change_msg'] = 2
+        update.message.reply_text(text=cfm_change_init)
+
+dispatcher.add_handler(CommandHandler('change_msg', change_msg), group=1)
+
+# /change_once
+@send_typing_action
+def change_once(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+
+    # if no other issue
+    else:
+        context.user_data['cfm']['change_msg'] = 1
+        update.message.reply_text(text=cfm_change_init)
+
+dispatcher.add_handler(CommandHandler('change_once', change_once), group=1)
+
+# /start_msg
+@send_typing_action
+def start_msg(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+
+    # if no other issue
+    else:
+        context.bot_data['cfm']['active'] = True
+        update.message.reply_text(text=cfm_restarted)
+
+dispatcher.add_handler(CommandHandler('start_msg', start_msg), group=1)
+
+# /stop_msg
+@send_typing_action
+def stop_msg(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+
+    # if no other issue
+    else:
+        context.bot_data['cfm']['active'] = False
+        update.message.reply_text(text=cfm_stopped)
+
+dispatcher.add_handler(CommandHandler('stop_msg', stop_msg), group=1)
+
 #######################
 # COMMANDS FOR ADMINS #
 #######################
@@ -658,7 +732,7 @@ def make_admin(update, context):
             else:
                 username = get_key_from_value(chat_id, context.bot_data['members'])
                 context.bot_data['admins'][username] = chat_id
-                context.bot_data['permissions_changed'].append(chat_id)
+                context.bot_data['permissions_change_msgd'].append(chat_id)
                 update.message.reply_text(text= add_admin_fin.format(username))
 
 dispatcher.add_handler(CommandHandler('make_admin', make_admin), group=1)
@@ -777,11 +851,27 @@ def process_msg(update, context):
         user_data['status']['feedback'] = False
         user_data['status']['action'] = False
     
+    # if user is trying to add or delete events
     elif bool(user_data['status']['add_event']):
         process_add_event(update, context, user_data)
-
+    
+    # if user is trying to add or delete teachings
     elif bool(user_data['status']['add_teaching']):
         process_add_teaching(update, context, user_data)
+
+    # if user is trying to change cfm msg
+    elif bool(context.user_data['status']['change_msg']):
+        new_msg = update.message.text
+        # changes temporarily
+        if context.user_data['status']['change_msg'] == 1:
+            context.bot_data['cfm']['temp_msg'] = new_msg
+            update.message.reply_text(text=cfm_once_fin)
+
+        # changes permanently
+        elif context.user_data['status']['change_msg'] == 2:
+            context.bot_data['cfm']['cfm_msg'] = new_msg
+            update.message.reply_text(text=cfm_change_fin)
+
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 
@@ -793,10 +883,18 @@ dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 @send_typing_action
 def collect_cfmation(context: telegram.ext.CallbackContext):
     # collect confirmation
-    chat_id = dispatcher.bot_data['chat_id']
-    dispatcher.bot.send_message(chat_id= chat_id, text=cfmation_msg)
-cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, interval=datetime.timedelta(days=7),\
-first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
+    chat_id = dispatcher.bot_data['chat_data']
+    # if there is a temp msg, use it
+    if dispatcher.bot_data['cfm']['temp_msg'] != '':
+        cfm_msg = dispatcher.bot_data['cfm']['temp_msg']
+        # erase temp_msg after use
+        dispatcher.bot_data['cfm']['temp_msg'] = ''
+    # take the permanent msg if there is no temp msg
+    else:
+        cfm_msg = dispatcher.bot_data['cfm']['cfm_msg']
+    dispatcher.bot.send_message(chat_id=chat_id, text=cfm_msg, parse_mode=ParseMode.HTML)
+cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, \
+    interval=datetime.timedelta(days=7), first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
 
 # daily send msg for daily events
 @send_typing_action
