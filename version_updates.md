@@ -4,6 +4,9 @@
 - Added broadcast function
 - Added hidden coders only update functions for immediate updates
 
+================ ALPHAbot v3.0.2 =====================
+- Hot fix for timezones
+
 ================ ALPHAbot v3.0.1 =====================
 - Dockerised ALPHAbot
 - Version Updates separated from README.md which now only describes what ALPHAbot does in the latest update
