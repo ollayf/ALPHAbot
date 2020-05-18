@@ -1,6 +1,6 @@
 ================ ALPHAbot v3.2.0 =====================
 - Added the main cfm_menu fns
-- Need to add cfm_menu itself and stress test, limit to menus for cfm
+- Need to stress test
 - Added msgs for future bday IC part
 
 ================ ALPHAbot v3.1.1 =====================

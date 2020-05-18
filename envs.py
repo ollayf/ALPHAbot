@@ -179,6 +179,7 @@ call_format_error = 'Wrong format inputted. It should be /start_call <url>'
 invalid_call_url = 'Invalid url input'
 call_not_started_msg = 'There is ongoing calls currently... Wake up your idea pls'
 not_reg_platform_error = 'This is an unregistered call platform, please contact yu fei to update the code'
+only_cfm_settings= 'This function is only allowed in cfm settings'
 
 user_timeout_msg = '15 minutes is up, I will automatically be going to sleep. Please remember \
 to end the conversation when not in use.\nYou can also use /events, /library, /start_call \
@@ -217,6 +218,7 @@ from the library'
 # FOR CFM #
 ###########
 
+cfm_access_msg = 'Welcome Confirmation IC {}! What would you like to do today?'
 cfm_restarted = 'Confirmation will be sent out starting from next Friday!'
 cfm_stopped = 'Confirmation message will no longer be sent out automatically :('
 cfm_change_init = 'What is the new confirmation message?'

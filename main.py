@@ -95,7 +95,7 @@ def process_members(update, context):
     initiate_user(user_id, update, context) # in utils
 
     # updates the permission according to quits by the coder
-    check_for_personal_change_msgs(update, context)
+    check_for_personal_changes(update, context)
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_members), group=0) # gives most prirority
 
@@ -329,11 +329,31 @@ def give_feedback(update, context):
 
 dispatcher.add_handler(CommandHandler('feedback', give_feedback), group=1)
 
+# /cfm_settings
+@send_typing_action
+def cfm_settings(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+    else:
+        # gets user permissions
+        permissions = context.user_data['permissions']
+        # in case the permission does not have permissions
+        if not check_permission(permissions, 'cfm_IC'):
+            update.message.reply_text(text=permission_fail_msg)
+        # if no other issue
+        else:
+            context.user_data['status']['cfm_settings'] = True
+            update.message.reply_text(text=cfm_access_msg)
+        
+dispatcher.add_handler(CommandHandler('cfm_settings', cfm_settings), group=1)
+
 ################################
 # COMMANDS FOR CONFIRMATION IC #
 ################################
-
-
 
 # /change_msg
 @send_typing_action
@@ -341,9 +361,14 @@ def change_msg(update, context):
     # makes sure user has started the conversation
     if not context.user_data['status']['started']:
         update.message.reply_text(text=not_started_error)
+
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
         update.message.reply_text(text=middle_of_action_msg)
+        
+    # dont continue if user is not in cfm_settings:
+    elif not context.user_data['status']['cfm_settings']:
+        update.message.reply_text(text=only_cfm_settings)
 
     # if no other issue
     else:
@@ -362,6 +387,10 @@ def change_once(update, context):
     elif context.user_data['status']['action']:
         update.message.reply_text(text=middle_of_action_msg)
 
+    # dont continue if user is not in cfm_settings:
+    elif not context.user_data['status']['cfm_settings']:
+        update.message.reply_text(text=only_cfm_settings)
+
     # if no other issue
     else:
         context.user_data['cfm']['change_msg'] = 1
@@ -369,9 +398,9 @@ def change_once(update, context):
 
 dispatcher.add_handler(CommandHandler('change_once', change_once), group=1)
 
-# /start_msg
+# /start_cfm
 @send_typing_action
-def start_msg(update, context):
+def start_cfm(update, context):
     # makes sure user has started the conversation
     if not context.user_data['status']['started']:
         update.message.reply_text(text=not_started_error)
@@ -384,11 +413,11 @@ def start_msg(update, context):
         context.bot_data['cfm']['active'] = True
         update.message.reply_text(text=cfm_restarted)
 
-dispatcher.add_handler(CommandHandler('start_msg', start_msg), group=1)
+dispatcher.add_handler(CommandHandler('start_cfm', start_cfm), group=1)
 
-# /stop_msg
+# /stop_cfm
 @send_typing_action
-def stop_msg(update, context):
+def stop_cfm(update, context):
     # makes sure user has started the conversation
     if not context.user_data['status']['started']:
         update.message.reply_text(text=not_started_error)
@@ -401,7 +430,7 @@ def stop_msg(update, context):
         context.bot_data['cfm']['active'] = False
         update.message.reply_text(text=cfm_stopped)
 
-dispatcher.add_handler(CommandHandler('stop_msg', stop_msg), group=1)
+dispatcher.add_handler(CommandHandler('stop_cfm', stop_cfm), group=1)
 
 #######################
 # COMMANDS FOR ADMINS #

@@ -574,3 +574,31 @@ def menu_activated(user_data):
             result = True
 
     return result
+
+def check_permission(auth, requirement):
+    '''
+    Checks if the permission level of the user is sufficient for the action
+    Returns True if allowed, False if not
+    '''
+    power_level = {
+        'coders': 20,
+        'admins': 10,
+        'bday_IC': 2,
+        'cfm_IC': 2,
+        'member': 1
+    }
+    assert tuple(power_level.keys()).__contains__(auth), 'User Perms not exist'
+    assert tuple(power_level.keys()).__contains__(requirement), 'Reqm Perms not exist'
+
+    # to be returned
+    result = False
+    if auth == requirement:
+        result = True
+    
+    elif power_level[auth] > power_level[requirement]:
+        result = True
+
+    else:
+        result = False
+
+    return result
