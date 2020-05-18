@@ -3,6 +3,9 @@
 - Need to add cfm_menu itself and stress test, limit to menus for cfm
 - Added msgs for future bday IC part
 
+================ ALPHAbot v3.1.1 =====================
+- Hot fix for timezones
+
 ================ ALPHAbot v3.1.0 =====================
 - Added conversation timeouts (15mins)
 - Added spam chat with a call has started
