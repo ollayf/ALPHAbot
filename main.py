@@ -790,7 +790,6 @@ dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 ##############
 
 # collect confirmation every week on Thursday 1800hrs
-@send_typing_action
 def collect_cfmation(context: telegram.ext.CallbackContext):
     # collect confirmation
     chat_id = dispatcher.bot_data['chat_id']
@@ -799,7 +798,6 @@ cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, interval
 first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
 
 # daily send msg for daily events
-@send_typing_action
 def remind_events(context: telegram.ext.CallbackContext):
     dispatcher.bot.send_message(chat_id = 333647246, text='UPDATE ATTEMPED') # NEW ADDED
     # send reminders or remove events accordingly to every user registered as a member

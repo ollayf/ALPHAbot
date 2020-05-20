@@ -1,3 +1,6 @@
+================ ALPHAbot v3.1.2 =====================
+- Hot fix for send_typing_action
+
 ================ ALPHAbot v3.1.1 =====================
 - Hot fix for timezones
 
