@@ -76,12 +76,13 @@ def user_timeout(context):
     j_context = context.job.context
     # for easier access to user_data
     user_data = j_context.user_data
-    user_id = user_data['user_id']
-    # resets user session
-    clear_user_memory(user_data, True)
-    # informs the user
-    j_context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
-    return
+    if user_data['status']['started']:
+        user_id = user_data['user_id']
+        # resets user session
+        clear_user_memory(user_data, True)
+        # informs the user
+        j_context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
+        return
 
 ############
 # COMMANDS #

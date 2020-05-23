@@ -69,7 +69,7 @@ default_bot_data = {
     },
 'events': {},
 'library': {
-    'limit': 3, # for testing usually put 6 
+    'limit': 10, # for testing usually put 6 
     'teachings': {}
     },
 'current_call': [],
