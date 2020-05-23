@@ -57,7 +57,7 @@ CMI:cry::"""
 # only this bot_data attribute needs to be a dict object
 # the rest must be defaultdict object
 default_bot_data = {
-'chat_id': BOT_TEST_ID,
+'chat_id': ALPHA_CHAT_ID,
 "members": members if type(members)==dict else {},
 'admins': admins if type(members)==dict else {},
 'coders': coders,
@@ -119,6 +119,8 @@ end_msgs = ['Going so soon...._Alright..._Bye then...',\
     'k thx bai'
     ]
 
+cancel_msg = 'Alrighty! Action cancelled!'
+
 usage_timeout_msg = '15 minutes is up, I will automatically be going to \
 sleep. Next time please remember to end me when not in use.\nYou can also use \
 /eventlist or /teaching list without starting me up.'   
@@ -164,6 +166,8 @@ not_integer_error = 'Value is not an integer. Try inputting index again'
 out_of_range_error = 'Index out of range'
 one_arg_error = 'Only 1 argument allowed to be input'
 not_exist_error = 'this person does not exist'
+not_in_action_error = 'You are not currently in an action!'
+other_menu_error = 'You are currently in another menu. /quit first before accessing this menu'
 
 already_admin_msg = 'this person is already and admin lol'
 add_admin_fin = 'New admin {} added!'
@@ -249,16 +253,21 @@ Sends a message to the group that the call is on, don\'t say bojio.(only availab
 Sends a message to the group that the call is on, don\'t say bojio.',
         'end_call': 'Informs me that the call is ended, aka stopping the spam',
         'feedback': 'opens up the floor for a good ol\' one sided roasting session. Come at me bro',
+        'admin_menu': 'Opens the menu of functions for admins',
+        'cfm_settings': 'Opens the menu of function for the confirmation IC',
         'end': 'ends the conversation with me :(',
-        'admin_menu': 'Opens the menu of functions you can use as an admin',
         'base_menu': ''
         },
 
-    'confirmation':{ # /cfm_settings
+    'cfm_settings':{ # /cfm_settings
+        'view_msg': 'Views the next message to be sent to the chat',
         'change_msg': 'changes the confirmation message that is sent out every week',
         'change_once': 'changes the confirmation just for one time',
-        'stop_msg': 'stops automatically sending the confirmation message',
-        'start_msg': 'restarts the weekly automatic confirmation message'
+        'stop_cfm': 'stops automatically sending the confirmation message',
+        'start_cfm': 'restarts the weekly automatic confirmation message',
+        'quit': 'exits the admin menu',
+        'end': 'ends the conversation with me :(',
+        'base_menu': ''
         },
     
     'birthday':{ # /bday_settings

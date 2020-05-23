@@ -13,6 +13,7 @@ from utils import *
 import logging
 import random
 from pytz import timezone
+from emoji import emojize
 
 ####################
 # INITIALISING BOT #
@@ -106,16 +107,18 @@ dispatcher.add_handler(MessageHandler(Filters.text, process_members), group=0) #
 
 # /help
 @send_typing_action
-def help(update, context):
+def help(update, context):\
     # returns fail msg if the user is currently in an action
     if context.user_data['status']['action']:
-        update.effective_message.reply_text(text=function_fail_msg)
+        update.message.reply_text(text=function_fail_msg)
         return
     # creates the different menus
     elif context.user_data['status']['backend']: # backend mode
         menu = create_menu(possible_commands, 'backend')
     elif context.user_data['status']['admin_menu']: # adminmenu mode
         menu = create_menu(possible_commands, 'admin_menu')
+    elif context.user_data['status']['cfm_settings']: # cfm_settings
+        menu = create_menu(possible_commands, 'cfm_settings')
     elif context.user_data['status']['started']: # start mode
         menu = create_menu(possible_commands, 'started')
     else: # in sleep mode
@@ -131,14 +134,14 @@ dispatcher.add_handler(CommandHandler('help', help), group=1)
 def start_call(update, context): 
     # returns fail msg if the user is currently in an action
     if context.user_data['status']['action']:
-        update.effective_message.reply_text(text=function_fail_msg)
+        update.message.reply_text(text=function_fail_msg)
         return
     # check the user permissions
     elif context.user_data['permissions'] != 'coders' and context.user_data['permissions'] != 'admins':
-        update.effective_message.reply_text(text=permission_fail_msg)
+        update.message.reply_text(text=permission_fail_msg)
     # there must only be one argument which is the url
     elif not len(context.args) == 1:
-        update.effective_message.reply_text(text=call_format_error)
+        update.message.reply_text(text=call_format_error)
         return
     
     else:
@@ -165,11 +168,11 @@ dispatcher.add_handler(CommandHandler('start_call', start_call), group=1)
 def end_call(update, context): 
     # returns fail msg if the user is currently in an action
     if context.user_data['status']['action']:
-        update.effective_message.reply_text(text=function_fail_msg)
+        update.message.reply_text(text=function_fail_msg)
         return
     # only continues if there is an going call
     elif context.bot_data['current_call'] == []:
-        update.effective_message.reply_text(text=call_not_started_msg)
+        update.message.reply_text(text=call_not_started_msg)
         return
     # if there is an ongoing call and user wants to end it
     else:
@@ -214,6 +217,22 @@ def display_lib(update, context):
 
 dispatcher.add_handler(CommandHandler('library', display_lib), group=1)
 
+# /cancel
+@send_typing_action
+def cancel(update, context):
+    # dont run command if the user is currently doing an action
+    if not context.user_data['status']['action']:
+        update.effective_message.reply_text(text= not_in_action_error)
+
+    # if no other issue
+    else:
+        user_data = context.user_data
+        user_data['status']['action'] = False
+        clear_user_memory(user_data)
+        update.message.reply_text(text=cancel_msg)
+
+dispatcher.add_handler(CommandHandler('cancel', cancel), group=1)
+
 # msg sent when /start
 @send_typing_action
 def start(update, context):
@@ -222,14 +241,14 @@ def start(update, context):
 
     # if the user is supposed to be in admin menu, in action or in backend, fail this action
     if status_dict['admin_menu'] or status_dict['action'] or status_dict['backend']:
-        update.effective_message.reply_text(text=function_fail_msg)
+        update.message.reply_text(text=function_fail_msg)
         return
 
     # gets the persons username
-    username = update.effective_message.from_user.username
+    username = update.message.from_user.username
 
     if context.user_data['status']['started']:
-        update.effective_message.reply_text(text=alr_started_msg.format(username))
+        update.message.reply_text(text=alr_started_msg.format(username))
         return
 
     # if they havent been initiated, pm them the first start msg
@@ -238,7 +257,7 @@ def start(update, context):
         context.user_data['status']['started'] = True
         # set timeout in 15 mins
         jobqueuer.run_once(user_timeout, datetime.timedelta(minutes=15), context=context)
-        context.bot.send_message(chat_id=update.effective_message.from_user.id, \
+        context.bot.send_message(chat_id=update.message.from_user.id, \
             text=first_start_msg.format(username))
 
     # for normal users
@@ -255,11 +274,11 @@ dispatcher.add_handler(CommandHandler('start', start), group=1)
 def broadcast(update, context): 
     # returns fail msg if the user is currently in an action
     if context.user_data['status']['action']:
-        update.effective_message.reply_text(text=function_fail_msg)
+        update.message.reply_text(text=function_fail_msg)
         return
     # check the user permissions
     elif context.user_data['permissions'] != 'coders' and context.user_data['permissions'] != 'admins':
-        update.effective_message.reply_text(text=permission_fail_msg)
+        update.message.reply_text(text=permission_fail_msg)
 
     # if theres no other issue
     else:
@@ -318,14 +337,14 @@ def give_feedback(update, context):
         update.message.reply_text(text=not_started_error)
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
     elif not context.user_data['status']['feedback']:
         # events_dict feedback status to True
         context.user_data['status']['feedback'] = True
         context.user_data['status']['action'] = True
-        update.effective_message.reply_text(text=feedback_msg)
+        update.message.reply_text(text=feedback_msg)
     else: 
-        update.effective_message.reply_text(text=feedback_given_msg)
+        update.message.reply_text(text=feedback_given_msg)
 
 dispatcher.add_handler(CommandHandler('feedback', give_feedback), group=1)
 
@@ -338,6 +357,10 @@ def cfm_settings(update, context):
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
         update.message.reply_text(text=middle_of_action_msg)
+    # dont allow accessing this if the user is in another menu
+    elif menu_is_open(context.user_data):
+        update.message.reply_text(text= other_menu_error)
+        return
     else:
         # gets user permissions
         permissions = context.user_data['permissions']
@@ -346,14 +369,37 @@ def cfm_settings(update, context):
             update.message.reply_text(text=permission_fail_msg)
         # if no other issue
         else:
+            username = update.message.from_user.username
             context.user_data['status']['cfm_settings'] = True
-            update.message.reply_text(text=cfm_access_msg)
+            update.message.reply_text(text=cfm_access_msg.format(username))
         
 dispatcher.add_handler(CommandHandler('cfm_settings', cfm_settings), group=1)
 
 ################################
 # COMMANDS FOR CONFIRMATION IC #
 ################################
+
+# /view_msg
+@send_typing_action
+def view_msg(update, context):
+    # makes sure user has started the conversation
+    if not context.user_data['status']['started']:
+        update.message.reply_text(text=not_started_error)
+    # dont run command if the user is currently doing an action
+    elif context.user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+    # dont continue if user is not in cfm_settings:
+    elif not context.user_data['status']['cfm_settings']:
+        update.message.reply_text(text=only_cfm_settings)
+    # if no other issue
+    else:
+        if context.bot_data['cfm']['temp_msg'] != '':
+            msg = context.bot_data['cfm']['temp_msg']
+        else:
+            msg = context.bot_data['cfm']['cfm_msg']
+        update.message.reply_text(text=emojize(msg))
+
+dispatcher.add_handler(CommandHandler('view_msg', view_msg), group=1)
 
 # /change_msg
 @send_typing_action
@@ -372,7 +418,7 @@ def change_msg(update, context):
 
     # if no other issue
     else:
-        context.user_data['cfm']['change_msg'] = 2
+        context.user_data['status']['change_msg'] = 2
         update.message.reply_text(text=cfm_change_init)
 
 dispatcher.add_handler(CommandHandler('change_msg', change_msg), group=1)
@@ -393,7 +439,7 @@ def change_once(update, context):
 
     # if no other issue
     else:
-        context.user_data['cfm']['change_msg'] = 1
+        context.user_data['status']['change_msg'] = 1
         update.message.reply_text(text=cfm_change_init)
 
 dispatcher.add_handler(CommandHandler('change_once', change_once), group=1)
@@ -407,6 +453,10 @@ def start_cfm(update, context):
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
         update.message.reply_text(text=middle_of_action_msg)
+
+    # dont continue if user is not in cfm_settings:
+    elif not context.user_data['status']['cfm_settings']:
+        update.message.reply_text(text=only_cfm_settings)
 
     # if no other issue
     else:
@@ -423,7 +473,11 @@ def stop_cfm(update, context):
         update.message.reply_text(text=not_started_error)
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
+
+    # dont continue if user is not in cfm_settings:
+    elif not context.user_data['status']['cfm_settings']:
+        update.message.reply_text(text=only_cfm_settings)
 
     # if no other issue
     else:
@@ -441,19 +495,19 @@ dispatcher.add_handler(CommandHandler('stop_cfm', stop_cfm), group=1)
 def admin_session(update, context):
     # dont run command if the user is currently doing an action
     if context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if the person doesn't have permissions
     elif (context.user_data['permissions'] != 'coders') and \
         (context.user_data['permissions'] != 'admins'):
-        update.effective_message.reply_text(text=permission_fail_msg)
+        update.message.reply_text(text=permission_fail_msg)
     # if the person is supposed to be in the admin menu already
     elif context.user_data['status']['admin_menu']:
-        update.effective_message.reply_text(text=bruh_message)
+        update.message.reply_text(text=bruh_message)
     
     # dont allow this to be run in admin menu or backend
-    elif context.user_data['status']['admin_menu'] or context.user_data['status']['backend']:
-        update.message.reply_text(text= function_fail_msg)
+    elif menu_is_open(context.user_data):
+        update.message.reply_text(text= other_menu_error)
         return
 
     # starts the admin session
@@ -473,12 +527,12 @@ def add_event(update, context):
         return
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     else:
         context.user_data['status']['action'] = True
         context.user_data['status']['add_event'] = 1
-        update.effective_message.reply_text(text=add_event_0)
+        update.message.reply_text(text=add_event_0)
 
 dispatcher.add_handler(CommandHandler('add_event', add_event), group=1)
 
@@ -491,13 +545,13 @@ def add_whole_event(update, context):
         return
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)  
+        update.message.reply_text(text=middle_of_action_msg)  
         return
     
     else:
         context.user_data['status']['action'] = True
         context.user_data['status']['add_event'] = 5
-        update.effective_message.reply_text(text=whole_event_msg)
+        update.message.reply_text(text=whole_event_msg)
 
 dispatcher.add_handler(CommandHandler('add_whole_event', add_whole_event), group=1)
 
@@ -510,7 +564,7 @@ def del_event(update, context):
         return
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)  
+        update.message.reply_text(text=middle_of_action_msg)  
         return
     
     events_dict = context.bot_data['events']
@@ -539,12 +593,12 @@ def add_teaching(update, context):
         return
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     else:
         context.user_data['status']['action'] = True
         context.user_data['status']['add_teaching'] = 1
-        update.effective_message.reply_text(text=add_teaching_0)
+        update.message.reply_text(text=add_teaching_0)
 
 dispatcher.add_handler(CommandHandler('add_teaching', add_teaching), group=1)
 
@@ -557,12 +611,12 @@ def add_whole_teaching(update, context):
         return
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     else:
         context.user_data['status']['action'] = True
         context.user_data['status']['add_teaching'] = 2
-        update.effective_message.reply_text(text=whole_teaching_msg)
+        update.message.reply_text(text=whole_teaching_msg)
 
 dispatcher.add_handler(CommandHandler('add_whole_teaching', add_whole_teaching), group=1)
 
@@ -575,7 +629,7 @@ def del_teaching(update, context):
         return
     # dont run command if the user is currently doing an action
     elif context.user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
 
     # for easier access to lib_dict
@@ -588,7 +642,7 @@ def del_teaching(update, context):
         context.user_data['status']['action'] = True
         context.user_data['status']['add_teaching'] = -1
         displayed_lib = del_teaching_init + '\n\n' + convert_dict_to_str(lib_dict, True)
-        update.effective_message.reply_text(text=displayed_lib)
+        update.message.reply_text(text=displayed_lib)
 
 dispatcher.add_handler(CommandHandler('del_teaching', del_teaching), group=1)
 
@@ -609,8 +663,8 @@ def backend(update, context):
         return
 
     # dont allow this to be run in admin menu or backend
-    elif user_data['status']['admin_menu'] or user_data['status']['backend']:
-        update.message.reply_text(text= function_fail_msg)
+    elif menu_is_open(user_data):
+        update.message.reply_text(text= other_menu_error)
         return
 
     # dont run command if the user is currently doing an action
@@ -634,11 +688,11 @@ def events_dict(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if theres no other issue
     else:
@@ -654,11 +708,11 @@ def lib_dict(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if theres no other issue
     else:
@@ -674,11 +728,11 @@ def admins_dict(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if theres no other issue
     else:
@@ -694,11 +748,11 @@ def members_dict(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if theres no other issue
     else:
@@ -714,11 +768,11 @@ def coders_list(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if theres no other issue
     else:
@@ -773,11 +827,11 @@ def remove_member(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if authentication goes through, check validity
     else:
@@ -807,11 +861,11 @@ def remove_admin(update, context):
     user_data = context.user_data
     # user must access backend first
     if not user_data['status']['backend']:
-        update.effective_message.reply_text(text=backend_init_fail)
+        update.message.reply_text(text=backend_init_fail)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if authentication goes through, check validity
     else:
@@ -841,28 +895,49 @@ def quit(update, context):
     # for easier access to user data
     user_data = context.user_data
     # user must access backend first
-    if not user_data['status']['backend'] and not user_data['status']['admin_menu']:
-        update.effective_message.reply_text(text=quit_fail_msg)
+    if not menu_is_open(user_data):
+        update.message.reply_text(text=quit_fail_msg)
         return
     # dont run command if the user is currently doing an action
     elif user_data['status']['action']:
-        update.effective_message.reply_text(text=middle_of_action_msg)
+        update.message.reply_text(text=middle_of_action_msg)
         return
     # if theres no other issue
     else:
-        user_data['status']['admin_menu'] = False
-        user_data['status']['backend'] = False
+        close_all_menus(user_data)
         update.message.reply_text(text= quit_fin_msg)
 
 dispatcher.add_handler(CommandHandler('quit', quit), group=1)
 
-# for testing the daily updates
-@send_typing_action
-def update(update, context):
-    daily_events_update(dispatcher)
-    bot_print(update, 'Daily Update Done!')
+## for testing the daily updates
+# @send_typing_action
+# def update(update, context):
+#     daily_events_update(dispatcher)
+#     bot_print(update, 'Daily Update Done!')
 
-dispatcher.add_handler(CommandHandler('update', update), group=1)
+# dispatcher.add_handler(CommandHandler('update', update), group=1)
+
+## for testing confirmation sender
+# @send_typing_action
+# def confirm(update, context):
+#     bot_print(update, 'Attempted send confirmation')
+#     # collect confirmation
+#     chat_id = dispatcher.bot_data['chat_id']
+#     # # doesn't continue if cfm is not started
+#     # if not dispatcher.bot_data['cfm']['active']:
+#     #     return
+#     # if there is a temp msg, use it
+#     if dispatcher.bot_data['cfm']['temp_msg'] != '':
+#         cfm_msg = dispatcher.bot_data['cfm']['temp_msg']
+#         # erase temp_msg after use
+#         dispatcher.bot_data['cfm']['temp_msg'] = ''
+#     # take the permanent msg if there is no temp msg
+#     else:
+#         cfm_msg = dispatcher.bot_data['cfm']['cfm_msg']
+#     dispatcher.bot.send_message(chat_id=chat_id, text=emojize(cfm_msg), parse_mode=ParseMode.HTML)
+
+# # for testing the daily updates
+# dispatcher.add_handler(CommandHandler('confirm', confirm), group=1)
 
 # process every message depending on what the user is doing (needs to be of lowest priority possible)
 def process_msg(update, context):
@@ -875,8 +950,8 @@ def process_msg(update, context):
     # if the user is trying to give feedback
     if user_data['status']['feedback']:
         for coder in coders:
-            context.bot.send_message(chat_id=coder, text=update.effective_message.text)
-        update.effective_message.reply_text(text=feedback_given_msg)
+            context.bot.send_message(chat_id=coder, text=update.message.text)
+        update.message.reply_text(text=feedback_given_msg)
         user_data['status']['feedback'] = False
         user_data['status']['action'] = False
     
@@ -894,46 +969,18 @@ def process_msg(update, context):
         # changes temporarily
         if context.user_data['status']['change_msg'] == 1:
             context.bot_data['cfm']['temp_msg'] = new_msg
+            context.user_data['status']['change_msg'] = 0
             update.message.reply_text(text=cfm_once_fin)
 
         # changes permanently
         elif context.user_data['status']['change_msg'] == 2:
             context.bot_data['cfm']['cfm_msg'] = new_msg
+            context.user_data['status']['change_msg'] = 0
             update.message.reply_text(text=cfm_change_fin)
 
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 
-##############
-# FIXED JOBS #
-##############
-
-# collect confirmation every week on Thursday 1800hrs
-@send_typing_action
-def collect_cfmation(context: telegram.ext.CallbackContext):
-    # collect confirmation
-    chat_id = dispatcher.bot_data['chat_data']
-    # if there is a temp msg, use it
-    if dispatcher.bot_data['cfm']['temp_msg'] != '':
-        cfm_msg = dispatcher.bot_data['cfm']['temp_msg']
-        # erase temp_msg after use
-        dispatcher.bot_data['cfm']['temp_msg'] = ''
-    # take the permanent msg if there is no temp msg
-    else:
-        cfm_msg = dispatcher.bot_data['cfm']['cfm_msg']
-    dispatcher.bot.send_message(chat_id=chat_id, text=cfm_msg, parse_mode=ParseMode.HTML)
-cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, \
-    interval=datetime.timedelta(days=7), first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
-
-# daily send msg for daily events
-@send_typing_action
-def remind_events(context: telegram.ext.CallbackContext):
-    dispatcher.bot.send_message(chat_id = 333647246, text='UPDATE ATTEMPED') # NEW ADDED
-    # send reminders or remove events accordingly to every user registered as a member
-    daily_events_update(dispatcher)
-
-event_reminder = jobqueuer.run_daily(callback=remind_events,\
-    time=manual_convert_SGT(datetime.time(8, 0, 0, 0)))
 
 # send a message to people that inputted an invalid command (lowest priority)
 @send_typing_action
@@ -941,7 +988,40 @@ def unknown(update, context):
     update.message.reply_text(text='That\'s not a real command fool!')
 dispatcher.add_handler(MessageHandler(Filters.command, unknown), group=1)
 
+##############
+# FIXED JOBS #
+##############
 
+# collect confirmation every week on Thursday 1800hrs
+def collect_cfmation(context: telegram.ext.CallbackContext):
+    # collect confirmation
+    logging.info('cfm sent to group')
+    print('cfm sent to group')
+    chat_id = dispatcher.bot_data['chat_id']
+    # doesn't continue if cfm is not started
+    if not dispatcher.bot_data['cfm']['active']:
+        return
+    # if there is a temp msg, use it
+    elif dispatcher.bot_data['cfm']['temp_msg'] != '':
+        cfm_msg = dispatcher.bot_data['cfm']['temp_msg']
+        # erase temp_msg after use
+        dispatcher.bot_data['cfm']['temp_msg'] = ''
+    # take the permanent msg if there is no temp msg
+    else:
+        cfm_msg = dispatcher.bot_data['cfm']['cfm_msg']
+    dispatcher.bot.send_message(chat_id=chat_id, text=emojize(cfm_msg), parse_mode=ParseMode.HTML)
+cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, \
+    interval=datetime.timedelta(days=7), first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
+
+
+# daily send msg for daily events
+def remind_events(context: telegram.ext.CallbackContext):
+    dispatcher.bot.send_message(chat_id = 333647246, text='UPDATE ATTEMPED') # NEW ADDED
+    # send reminders or remove events accordingly to every user registered as a member
+    daily_events_update(dispatcher)
+
+event_reminder = jobqueuer.run_daily(callback=remind_events,\
+    time=manual_convert_SGT(datetime.time(8, 0, 0, 0)))
 
 print('polling')
 # to start the bot

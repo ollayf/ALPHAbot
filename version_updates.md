@@ -2,6 +2,11 @@
 - Added the main cfm_menu fns
 - Need to stress test
 - Added msgs for future bday IC part
+- Removed all uses of effective message
+- Allowed emojis for the confirmation message
+
+================ ALPHAbot v3.1.1 =====================
+- Hot fix for send_typing_action
 
 ================ ALPHAbot v3.1.1 =====================
 - Hot fix for timezones

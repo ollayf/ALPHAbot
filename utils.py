@@ -9,6 +9,49 @@ from telegram import ParseMode
 from envs import *
 import logging
 import requests
+            
+def menu_is_open(user_data):
+    '''
+    If a new menu is added, change this function and the next only
+    Returns True if a menu is open otherwise, return False
+    '''
+    if user_data['status']['admin_menu'] or user_data['status']['backend'] \
+        or user_data['status']['cfm_settings']:
+        return True
+    else:
+        return False
+
+def close_all_menus(user_data):
+    '''
+    Closes all menus in the conversation
+    If a new menu is added, change this function and the next only
+    '''
+    user_data['status']['admin_menu'] = False
+    user_data['status']['backend'] = False
+    user_data['status']['cfm_settings'] = False
+
+def clear_user_memory(user_data, end=False, quit=False):
+    '''
+    in an event such as ending the bot, reset all the attributes of the user to default
+    '''
+    status = user_data['status']
+    status['feedback'] = False
+    status['action'] = False
+    status['add_event'] = 0
+    status['add_teaching'] = 0
+
+    user_data['temp_list'] = []
+    user_data['temp_string'] = ''
+
+    # if end, clear everything includes quit
+    if end:
+        status['started'] = False
+        status['admin_menu'] = False
+        status['backend'] = False
+    
+    # quits without ending
+    elif quit:
+        close_all_menus(user_data)
 
 def manual_convert_SGT(dateTime):
     '''
@@ -218,7 +261,7 @@ def initiate_user(user_id, update, context):
         # initiates the username, user_id, group_id
         context.user_data['username'] = username
         context.user_data['user_id'] = user_id
-        context.user_data['group_id'] = BOT_TEST_ID
+        context.user_data['group_id'] = ALPHA_CHAT_ID
 
 # in the future for multiple groups
 # def get_users_group_id(update, context):
@@ -438,32 +481,6 @@ def bot_print(update, text):
         text = str(text)
     update.message.reply_text(text=text)
 
-            
-def clear_user_memory(user_data, end=False, quit=False):
-    '''
-    in an event such as ending the bot, reset all the attributes of the user to default
-    '''
-    status = user_data['status']
-    status['feedback'] = False
-    status['action'] = False
-    status['add_event'] = 0
-    status['add_teaching'] = 0
-
-    user_data['temp_list'] = []
-    user_data['temp_string'] = ''
-
-    # if end, clear everything includes quit
-    if end:
-        status['started'] = False
-        status['admin_menu'] = False
-        status['backend'] = False
-    
-    # quits without ending
-    elif quit:
-        status['admin_menu'] = False
-        status['backend'] = False
-
-
 def convert_dict_to_str(relevant_dict, teaching= False):
     '''
     Converts the events in the bot_data into a string to be displayed
@@ -483,7 +500,7 @@ def create_menu(commands_dict, menu):
     '''
     Converts the commands dict into a menu (str) to be sent to the user
     '''
-    assert commands_dict.__contains__(menu), 'Input menu is not valid'
+    assert tuple(commands_dict.keys()).__contains__(menu), 'Input menu is not valid'
     base_menu = commands_dict[menu]['base_menu']
     commands_dict = commands_dict[menu]
     displayed_menu = f'{base_menu}\n\n'
