@@ -1,4 +1,4 @@
-================ ALPHAbot v3.2.0 =====================
+================ ALPHAbot v3.2.1 =====================
 - Hotfix for server issues
 - Added start.sh (separated from server_setup.sh)
 
