@@ -57,7 +57,7 @@ CMI:cry::"""
 # only this bot_data attribute needs to be a dict object
 # the rest must be defaultdict object
 default_bot_data = {
-'chat_id': ALPHA_CHAT_ID,
+'chat_id': BOT_TEST_ID,
 "members": members if type(members)==dict else {},
 'admins': admins if type(members)==dict else {},
 'coders': coders,

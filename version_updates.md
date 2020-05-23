@@ -1,4 +1,8 @@
 ================ ALPHAbot v3.2.0 =====================
+- Hotfix for server issues
+- Added start.sh (separated from server_setup.sh)
+
+================ ALPHAbot v3.2.0 =====================
 - Added the main cfm_menu fns
 - Need to stress test
 - Added msgs for future bday IC part

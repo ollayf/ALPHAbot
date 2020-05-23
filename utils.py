@@ -261,7 +261,7 @@ def initiate_user(user_id, update, context):
         # initiates the username, user_id, group_id
         context.user_data['username'] = username
         context.user_data['user_id'] = user_id
-        context.user_data['group_id'] = ALPHA_CHAT_ID
+        context.user_data['group_id'] = BOT_TEST_ID
 
 # in the future for multiple groups
 # def get_users_group_id(update, context):
