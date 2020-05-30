@@ -6,3 +6,7 @@ This is mainly done so by:
     4. Sending broadcasts to all members via pm
     5. Spamming the group when a call (i.e. on Zoom is started)
     6. Staying cool while doing all these
+
+## Running it using docker
+$ docker build DockerFile
+$ docker run <image name>
