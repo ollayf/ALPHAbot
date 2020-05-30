@@ -1,3 +1,6 @@
+================ ALPHAbot v3.2.3 =====================
+- Changed the logging of users added to members dict
+
 ================ ALPHAbot v3.2.2 =====================
 - Changed teaching limit
 - Changed user_timeout to only activate if the user has not ended convo
