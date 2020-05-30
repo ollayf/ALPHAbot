@@ -1,6 +1,7 @@
 ================ ALPHAbot v3.2.2 =====================
 - Changed teaching limit
 - Changed user_timeout to only activate if the user has not ended convo
+- Updated start.sh file and .gitignore file
 
 ================ ALPHAbot v3.2.1 =====================
 - Hotfix for server issues
