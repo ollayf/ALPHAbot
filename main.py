@@ -21,7 +21,7 @@ from emoji import emojize
 
 print('initialising')
 # initialises the updater object
-updater = Updater(token=testing_token, use_context=True, persistence=False)
+updater = Updater(token=live_token, use_context=True, persistence=False)
 
 dispatcher = updater.dispatcher # for quicker access to the dispatcher object
 jobqueuer = updater.job_queue # for quicker access to JobQueue object
@@ -76,12 +76,13 @@ def user_timeout(context):
     j_context = context.job.context
     # for easier access to user_data
     user_data = j_context.user_data
-    user_id = user_data['user_id']
-    # resets user session
-    clear_user_memory(user_data, True)
-    # informs the user
-    j_context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
-    return
+    if user_data['status']['started']:
+        user_id = user_data['user_id']
+        # resets user session
+        clear_user_memory(user_data, True)
+        # informs the user
+        j_context.bot.send_message(chat_id=user_id, text = user_timeout_msg)
+        return
 
 ############
 # COMMANDS #
@@ -107,7 +108,7 @@ dispatcher.add_handler(MessageHandler(Filters.text, process_members), group=0) #
 
 # /help
 @send_typing_action
-def help(update, context):\
+def help(update, context):
     # returns fail msg if the user is currently in an action
     if context.user_data['status']['action']:
         update.message.reply_text(text=function_fail_msg)
@@ -939,7 +940,14 @@ dispatcher.add_handler(CommandHandler('quit', quit), group=1)
 # # for testing the daily updates
 # dispatcher.add_handler(CommandHandler('confirm', confirm), group=1)
 
+# send a message to people that inputted an invalid command (lowest priority)
+@send_typing_action
+def unknown(update, context):
+    update.message.reply_text(text='That\'s not a real command fool!')
+dispatcher.add_handler(MessageHandler(Filters.command, unknown), group=1)
+
 # process every message depending on what the user is doing (needs to be of lowest priority possible)
+@send_typing_action
 def process_msg(update, context):
     # for easier access to user_id
     user_id = update.message.from_user.id
@@ -981,13 +989,6 @@ def process_msg(update, context):
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
 
-
-# send a message to people that inputted an invalid command (lowest priority)
-@send_typing_action
-def unknown(update, context):
-    update.message.reply_text(text='That\'s not a real command fool!')
-dispatcher.add_handler(MessageHandler(Filters.command, unknown), group=1)
-
 ##############
 # FIXED JOBS #
 ##############
@@ -1000,7 +1001,7 @@ def collect_cfmation(context: telegram.ext.CallbackContext):
     chat_id = dispatcher.bot_data['chat_id']
     # doesn't continue if cfm is not started
     if not dispatcher.bot_data['cfm']['active']:
-        return
+        pass
     # if there is a temp msg, use it
     elif dispatcher.bot_data['cfm']['temp_msg'] != '':
         cfm_msg = dispatcher.bot_data['cfm']['temp_msg']
@@ -1010,6 +1011,7 @@ def collect_cfmation(context: telegram.ext.CallbackContext):
     else:
         cfm_msg = dispatcher.bot_data['cfm']['cfm_msg']
     dispatcher.bot.send_message(chat_id=chat_id, text=emojize(cfm_msg), parse_mode=ParseMode.HTML)
+
 cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, \
     interval=datetime.timedelta(days=7), first=getDatetimeOfNextXDay(isoweekday=4, hour=18))
 

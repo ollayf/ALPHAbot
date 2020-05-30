@@ -193,3 +193,89 @@ Traceback (most recent call last):
   File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 939, in confirm
     update.bot.send_message(chat_id=chat_id, text=emojize(cfm_msg), parse_mode=ParseMode.HTML)
 AttributeError: 'Update' object has no attribute 'bot'
+2020-05-30 18:42:21,464 - telegram.ext.updater -                     ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2020-05-30 18:42:21,465 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 380, in _network_loop_retry
+    if not action_cb():
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\updater.py", line 338, in polling_action_cb
+    updates = self.bot.get_updates(self.last_update_id,
+  File "<decorator-gen-31>", line 2, in get_updates
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 2136, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 249, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2020-05-30 18:44:15,474 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 97, in process_members
+    initiate_user(user_id, update, context) # in utils
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 258, in initiate_user
+    context.bot.send_message(chat_id=update.effective_message.from_user.id, \
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 243, in _request_wrapper
+    raise Unauthorized(message)
+telegram.error.Unauthorized: Forbidden: bot can't initiate conversation with a user
+2020-05-30 18:44:16,321 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 163, in typing_func
+    return func(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 261, in start
+    context.bot.send_message(chat_id=update.message.from_user.id, \
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 243, in _request_wrapper
+    raise Unauthorized(message)
+telegram.error.Unauthorized: Forbidden: bot can't initiate conversation with a user
+2020-05-30 21:40:38,862 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 97, in process_members
+    initiate_user(user_id, update, context) # in utils
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 261, in initiate_user
+    context.bot.send_message(chat_id=update.effective_message.from_user.id, \
+  File "<decorator-gen-2>", line 2, in send_message
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 70, in decorator
+    result = func(*args, **kwargs)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 349, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\bot.py", line 178, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 331, in post
+    result = self._request_wrapper('POST', url,
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\utils\request.py", line 243, in _request_wrapper
+    raise Unauthorized(message)
+telegram.error.Unauthorized: Forbidden: bot can't initiate conversation with a user
+2020-05-30 22:19:16,323 - root -                     INFO - 6
+2020-05-30 22:19:16,323 - root -                     INFO - 0
+2020-05-30 22:23:00,001 - root -                     INFO - cfm sent to group

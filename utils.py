@@ -88,7 +88,7 @@ def getDatetimeOfNextXDay(isoweekday, hour):
 
     today = datetime.datetime.now()
     days_ahead = isoweekday - today.isoweekday()
-    if days_ahead <= 0: # Target day already happened this week
+    if days_ahead < 0: # Target day already happened this week
         days_ahead += 7
     date = today + datetime.timedelta(days=days_ahead)
     dateTime = datetime.datetime(date.year, date.month, date.day, hour, 0, 0)
@@ -243,6 +243,9 @@ def initiate_user(user_id, update, context):
     Set ups the important information for each user that hasn't been initiated yet
     '''
     username = update.message.from_user.username
+    # use first name if the user doesn't have a username
+    if username == None:
+        username = update.message.from_user.first_name
 
     # for people that are not yet members in bot_data
     if not tuple(context.bot_data['members'].values()).__contains__(user_id):
@@ -261,7 +264,13 @@ def initiate_user(user_id, update, context):
         # initiates the username, user_id, group_id
         context.user_data['username'] = username
         context.user_data['user_id'] = user_id
-        context.user_data['group_id'] = BOT_TEST_ID
+        context.user_data['group_id'] = context.bot_data['chat_id']
+    
+        # sends a message to the coders when someone is initiated nbv   
+        for coder in context.bot_data['coders']:
+            context.bot.send_message(chat_id=coder, text=f'{user_id} added to list of members as {username} with \
+permissions {context.user_data["permissions"]}.')
+
 
 # in the future for multiple groups
 # def get_users_group_id(update, context):

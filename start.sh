@@ -1,4 +1,4 @@
-cd /home/ollayf/ALPHAbot3/v3.2.0/venv
+cd venv
 source bin/activate
 cd ..
-python main.py
+python3.7 main.py
