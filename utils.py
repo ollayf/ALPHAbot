@@ -250,6 +250,11 @@ def initiate_user(user_id, update, context):
     # for people that are not yet members in bot_data
     if not tuple(context.bot_data['members'].values()).__contains__(user_id):
         context.bot_data['members'][username] = user_id
+
+        # sends a message to the coders when someone is initiated nbv   
+        for coder in context.bot_data['coders']:
+            context.bot.send_message(chat_id=coder, text=f'{user_id} added to list of members as {username} with \
+permissions {context.user_data["permissions"]}.')
     
     # initiate user
     if context.user_data == {}:
@@ -265,11 +270,6 @@ def initiate_user(user_id, update, context):
         context.user_data['username'] = username
         context.user_data['user_id'] = user_id
         context.user_data['group_id'] = context.bot_data['chat_id']
-    
-        # sends a message to the coders when someone is initiated nbv   
-        for coder in context.bot_data['coders']:
-            context.bot.send_message(chat_id=coder, text=f'{user_id} added to list of members as {username} with \
-permissions {context.user_data["permissions"]}.')
 
 
 # in the future for multiple groups
