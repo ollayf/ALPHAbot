@@ -2,6 +2,9 @@
 - Changed teaching limit
 - Changed user_timeout to only activate if the user has not ended convo
 - Updated start.sh file and .gitignore file
+- use username if the bot cannot access the
+- updated DockerFile
+- fixed getDatetimeOfNextDay function
 
 ================ ALPHAbot v3.2.1 =====================
 - Hotfix for server issues
