@@ -13,7 +13,7 @@ from utils import *
 import logging
 import random
 from pytz import timezone
-from emoji import emojize
+import emojis
 
 ####################
 # INITIALISING BOT #
@@ -398,7 +398,7 @@ def view_msg(update, context):
             msg = context.bot_data['cfm']['temp_msg']
         else:
             msg = context.bot_data['cfm']['cfm_msg']
-        update.message.reply_text(text=emojize(msg))
+        update.message.reply_text(text=emojis.encode(msg))
 
 dispatcher.add_handler(CommandHandler('view_msg', view_msg), group=1)
 
@@ -947,7 +947,6 @@ def unknown(update, context):
 dispatcher.add_handler(MessageHandler(Filters.command, unknown), group=1)
 
 # process every message depending on what the user is doing (needs to be of lowest priority possible)
-@send_typing_action
 def process_msg(update, context):
     # for easier access to user_id
     user_id = update.message.from_user.id
@@ -978,13 +977,13 @@ def process_msg(update, context):
         if context.user_data['status']['change_msg'] == 1:
             context.bot_data['cfm']['temp_msg'] = new_msg
             context.user_data['status']['change_msg'] = 0
-            update.message.reply_text(text=cfm_once_fin)
+            update.message.reply_text(text=emojis.decode(cfm_once_fin))
 
         # changes permanently
         elif context.user_data['status']['change_msg'] == 2:
             context.bot_data['cfm']['cfm_msg'] = new_msg
             context.user_data['status']['change_msg'] = 0
-            update.message.reply_text(text=cfm_change_fin)
+            update.message.reply_text(text=emojis.decode(cfm_change_fin))
 
 
 dispatcher.add_handler(MessageHandler(Filters.text, process_msg), group=1)
@@ -1010,7 +1009,7 @@ def collect_cfmation(context: telegram.ext.CallbackContext):
     # take the permanent msg if there is no temp msg
     else:
         cfm_msg = dispatcher.bot_data['cfm']['cfm_msg']
-    dispatcher.bot.send_message(chat_id=chat_id, text=emojize(cfm_msg), parse_mode=ParseMode.HTML)
+    dispatcher.bot.send_message(chat_id=chat_id, text=emojis.encode(cfm_msg), parse_mode=ParseMode.HTML)
 
 cfmation_collector = jobqueuer.run_repeating(callback=collect_cfmation, \
     interval=datetime.timedelta(days=7), first=getDatetimeOfNextXDay(isoweekday=4, hour=18))

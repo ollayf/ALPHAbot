@@ -11,3 +11,4 @@ cd venv
 source bin/activate
 cd ..
 pip install -r requirements.txt
+chmod +x ./start.sh

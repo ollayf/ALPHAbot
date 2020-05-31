@@ -1,5 +1,11 @@
+================ ALPHAbot v3.2.4 =====================
+- Edited the start.sh and server_setup.sh to allow running on the pi in background
+- Removed typing action processing msgs
+- Changed the way emojis are added to the cfm_msg
+
 ================ ALPHAbot v3.2.3 =====================
 - Changed the logging of users added to members dict
+- Updated README.md to be able to host it on the pi
 
 ================ ALPHAbot v3.2.2 =====================
 - Changed teaching limit

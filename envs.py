@@ -32,7 +32,7 @@ cfmation_msg=\
 """Confirmation for LG & SVC:balloon:
 
 
-SERVICE(time):wedding::heart_eyes:
+SERVICE(2pm):wedding::heart_eyes:
 Coming:grinning::
 
 
@@ -45,14 +45,14 @@ CMI:cry::
 
 
 
-LG(time/post svc):raising_hand:🏼♂
+LG(time/post svc):raising_hand::🏼♂
 
 Coming:grinning::
 
 
 
 
-CMI:cry::"""
+CMI :cry: :"""
 
 # only this bot_data attribute needs to be a dict object
 # the rest must be defaultdict object
