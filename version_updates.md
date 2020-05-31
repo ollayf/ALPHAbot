@@ -2,6 +2,7 @@
 - Edited the start.sh and server_setup.sh to allow running on the pi in background
 - Removed typing action processing msgs
 - Changed the way emojis are added to the cfm_msg
+- Added permissions to bday ICs and cfm_ICs
 
 ================ ALPHAbot v3.2.3 =====================
 - Changed the logging of users added to members dict

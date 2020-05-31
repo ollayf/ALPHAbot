@@ -205,6 +205,10 @@ def get_user_permissions(user_id, context):
         permissions = 'coders'
     elif tuple(bot_data['admins'].values()).__contains__(user_id):
         permissions = 'admins'
+    elif tuple(bot_data['bday_ICs'].values()).__contains__(user_id):
+        permissions = 'bday_IC'
+    elif tuple(bot_data['cfm_ICs'].values()).__contains__(user_id):
+        permissions = 'cfm_IC'
     else:
         permissions = 'members'
     return permissions
@@ -262,6 +266,7 @@ permissions {context.user_data["permissions"]}.')
         set_user_data_to_default(update, context, default_user_data.copy())
         # give permissions
         context.user_data['permissions'] = get_user_permissions(user_id, context)
+        bot_print(update, context.user_data['permissions'])
         # pms the person briefly about the role of alphabot
         context.bot.send_message(chat_id=update.effective_message.from_user.id, \
                         text=first_use)
@@ -613,6 +618,7 @@ def check_permission(auth, requirement):
         'cfm_IC': 2,
         'member': 1
     }
+    logging.info(f'{auth}')
     assert tuple(power_level.keys()).__contains__(auth), 'User Perms not exist'
     assert tuple(power_level.keys()).__contains__(requirement), 'Reqm Perms not exist'
 

@@ -279,3 +279,58 @@ telegram.error.Unauthorized: Forbidden: bot can't initiate conversation with a u
 2020-05-30 22:19:16,323 - root -                     INFO - 6
 2020-05-30 22:19:16,323 - root -                     INFO - 0
 2020-05-30 22:23:00,001 - root -                     INFO - cfm sent to group
+2020-05-31 16:24:32,795 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 97, in process_members
+    initiate_user(user_id, update, context) # in utils
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 268, in initiate_user
+    context.user_data['permissions'] = get_user_permissions(user_id, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 208, in get_user_permissions
+    elif tuple(bot_data['bday_ICs'].values()).__contains__(user_id):
+KeyError: 'bday_ICs'
+2020-05-31 16:24:35,583 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 163, in typing_func
+    return func(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 369, in cfm_settings
+    if not check_permission(permissions, 'cfm_IC'):
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 620, in check_permission
+    assert tuple(power_level.keys()).__contains__(auth), 'User Perms not exist'
+AssertionError: User Perms not exist
+2020-05-31 16:28:17,279 - root -                     INFO - coders
+2020-05-31 16:28:34,263 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 97, in process_members
+    initiate_user(user_id, update, context) # in utils
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 268, in initiate_user
+    context.user_data['permissions'] = get_user_permissions(user_id, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 208, in get_user_permissions
+    elif tuple(bot_data['bday_ICs'].values()).__contains__(user_id):
+KeyError: 'bday_ICs'
+2020-05-31 16:28:36,619 - root -                     INFO - None
+2020-05-31 16:28:36,620 - telegram.ext.dispatcher -                     ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\dispatcher.py", line 343, in process_update
+    handler.handle_update(update, self, check, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\venv\lib\site-packages\telegram\ext\handler.py", line 117, in handle_update
+    return self.callback(update, context)
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 163, in typing_func
+    return func(update, context)
+  File "d:/Telegram_Projects/new_ALPHAbot/main.py", line 369, in cfm_settings
+    if not check_permission(permissions, 'cfm_IC'):
+  File "d:\Telegram_Projects\new_ALPHAbot\utils.py", line 622, in check_permission
+    assert tuple(power_level.keys()).__contains__(auth), 'User Perms not exist'
+AssertionError: User Perms not exist
+2020-05-31 16:30:00,830 - root -                     INFO - cfm_IC
