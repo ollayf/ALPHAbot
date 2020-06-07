@@ -60,7 +60,7 @@ CMI :cry: :"""
 # only this bot_data attribute needs to be a dict object
 # the rest must be defaultdict object
 default_bot_data = {
-'chat_id': ALPHA_CHAT_ID,
+'chat_id': BOT_TEST_ID,
 'cfm_ICs': cfm_ICs,
 'bday_ICs': bday_ICs,
 "members": members if type(members)==dict else {},
@@ -175,6 +175,8 @@ not_in_action_error = 'You are not currently in an action!'
 other_menu_error = 'You are currently in another menu. /quit first before accessing this menu'
 
 already_admin_msg = 'this person is already and admin lol'
+perms_present = 'This user already has such privileges'
+add_perms_fin = '{} permissions added for {}!'
 add_admin_fin = 'New admin {} added!'
 permission_fail_msg = 'You have no power here!'
 bruh_message = 'BRUHHHHHHHHHHH........... You are literally alr in admin menu'
@@ -186,9 +188,10 @@ remove_not_exist = '{}: {} does not exist'
 quit_fail_msg = 'bruh there\'s nothing to quit lol'
 call_format_error = 'Wrong format inputted. It should be /start_call <url>'
 invalid_call_url = 'Invalid url input'
-call_not_started_msg = 'There is ongoing calls currently... Wake up your idea pls'
+call_not_started_msg = 'There are no ongoing calls currently... Wake up your idea pls'
 not_reg_platform_error = 'This is an unregistered call platform, please contact yu fei to update the code'
 only_cfm_settings= 'This function is only allowed in cfm settings'
+not_chat_id_error = 'This is not a chat id'
 
 user_timeout_msg = '15 minutes is up, I will automatically be going to sleep. Please remember \
 to end the conversation when not in use.\nYou can also use /events, /library, /start_call \
@@ -239,6 +242,7 @@ cfm_once_fin = 'Confirmation message changed temporarily. Thanks for serving.'
 #################
 
 remov_user_fin = '{} has been succesfully removed from {}'
+limit_change_msg = 'New teaching limit is: {}.'
 
 possible_commands = {
     'sleep' : { # the default mode
@@ -275,7 +279,7 @@ Sends a message to the group that the call is on, don\'t say bojio.',
         'base_menu': ''
         },
     
-    'birthday':{ # /bday_settings
+    'bday_settings':{ # /bday_settings
         'add_bday': 'adds a birthday into the memory',
         'remove_bday': 'removes a birthday stored',
         'default_bdays': 'sets the default list of bdays',
@@ -305,14 +309,24 @@ be rejected.',
     'backend': { # the mode activated after /backend
         'events_dict': 'shows the events in the dictionary form read by python',
         'lib_dict': 'shows the teachings in the dictionary form read by python',
+        'bday_dict': 'shows the birthdays in the dictionary form read by python', # new
+        'perm_events_dict': 'shows the permanent events in the dictionary form read by python', # new
+        'lib_limit': 'shows the limit on the library', 
+        'change_lib_limit': 'changes the library limit', 
         'admins_dict': 'shows the list of members with admins permissions',
-        'members_dict': 'shows the list of members',
+        'cfm_ICs_dict': 'shows the dict of members with cfm_IC permissions', 
+        'bday_ICs_dict': 'shows the dict of members with bday_IC permissions', 
+        'members_dict': 'shows the list of members', 
         'coders_list': 'shows the list of members with coders permissions',
         'make_admin': 'makes a currently registered member into an admin by passing in the \
 member\'s chat_id',
         'remove_member': 'removes member from the list of members. I.E removing from broadcast\
 list',
         'remove_admin': 'remove admin permissions on a member',
+        'make_cfm': 'gives the user cfm_IC permissions', 
+        'remove_cfm': 'removes cfm_IC permissions from the user',
+        'make_bday': 'makes a currently registered member into a bday_IC', 
+        'remove_bday': 'removed bday_IC permissions on the member',  
         'quit': 'leaves the backend',
         'end': 'ends the conversation with me',
         'base_menu': 'Welcome Master {}'

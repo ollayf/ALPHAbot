@@ -29,6 +29,8 @@ def close_all_menus(user_data):
     user_data['status']['admin_menu'] = False
     user_data['status']['backend'] = False
     user_data['status']['cfm_settings'] = False
+    user_data['status']['bday_settings'] = False
+
 
 def clear_user_memory(user_data, end=False, quit=False):
     '''
@@ -48,6 +50,7 @@ def clear_user_memory(user_data, end=False, quit=False):
         status['started'] = False
         status['admin_menu'] = False
         status['backend'] = False
+        close_all_menus(user_data)
     
     # quits without ending
     elif quit:
@@ -175,11 +178,12 @@ def check_for_personal_changes(update, context):
         # checks through the list of permission changes to see if user is one
         for id in context.bot_data['permissions_changed']:
             # changes permissions to the important users
-            bot_print(update, type(id))
             if int(id) == int(user_id):
                 context.bot_data['permissions_changed'].remove(id)
-                bot_print(update, context.bot_data['permissions_changed'])
-                context.user_data['permissions'] = get_user_permissions(user_id, context)
+                new_perms = get_user_permissions(user_id, context)
+                context.user_data['permissions'] = new_perms
+                update.message.reply_text(text='You have been changed to permissions level: {}'.format(new_perms))
+
 
 def sort_events_dict(events_dict):
     '''
@@ -266,7 +270,6 @@ permissions {context.user_data["permissions"]}.')
         set_user_data_to_default(update, context, default_user_data.copy())
         # give permissions
         context.user_data['permissions'] = get_user_permissions(user_id, context)
-        bot_print(update, context.user_data['permissions'])
         # pms the person briefly about the role of alphabot
         context.bot.send_message(chat_id=update.effective_message.from_user.id, \
                         text=first_use)
@@ -470,7 +473,6 @@ def remove_teaching(update, context, teaching_index):
     Deals with the clean removal and resorting of the library when a teaching is removed
     '''
     highest_index = len(context.bot_data['library']['teachings'])
-    bot_print(update, str(highest_index))
     # check if the chosen teaching is within the limit of the dictionary
     if not 1 <= teaching_index <= highest_index:
         update.message.reply_text(text=out_of_range_error)
@@ -616,7 +618,7 @@ def check_permission(auth, requirement):
         'admins': 10,
         'bday_IC': 2,
         'cfm_IC': 2,
-        'member': 1
+        'members': 1
     }
     logging.info(f'{auth}')
     assert tuple(power_level.keys()).__contains__(auth), 'User Perms not exist'
@@ -634,3 +636,40 @@ def check_permission(auth, requirement):
         result = False
 
     return result
+
+def is_chat_id(chat_id, return_type=False):
+    '''
+    Checks if a string, int entered is a chat_id
+    :param return_type: True or False value Whether you want to get the type of chat id this is
+    Returns False if it isnt and True if it is
+    '''
+    result = False
+    
+    # converts it into str if it is not alr a str
+    if not isinstance(chat_id, str):
+        id_str = str(chat_id)
+    else:
+        id_str = chat_id
+    
+    # checks
+    if len(id_str) == 14 and id_str[0] == '-':
+        result = True
+        id_type = 'chat'
+    
+    elif len(id_str) == 9:
+        result = True
+        id_type = 'user'
+
+    else:
+        id_type = None
+
+    # check if it can be an integer
+    try:
+        int(chat_id)
+    except ValueError:
+        result = False
+    
+    if return_type:
+        return result, id_type
+    else: 
+        return result

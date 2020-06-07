@@ -1,3 +1,8 @@
+================ ALPHAbot v3.2.5 =====================
+- Removed the bot_print for user intiation
+- Improved backend abilities:
+- make_cfm, make_bday, remove_cfm, remove_bday, cfm_ICs_dict, bday_ICs_dict
+
 ================ ALPHAbot v3.2.4 =====================
 - Edited the start.sh and server_setup.sh to allow running on the pi in background
 - Removed typing action processing msgs

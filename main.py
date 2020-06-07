@@ -21,7 +21,7 @@ import emojis
 
 print('initialising')
 # initialises the updater object
-updater = Updater(token=live_token, use_context=True, persistence=False)
+updater = Updater(token=testing_token, use_context=True, persistence=False)
 
 dispatcher = updater.dispatcher # for quicker access to the dispatcher object
 jobqueuer = updater.job_queue # for quicker access to JobQueue object
@@ -762,6 +762,91 @@ def members_dict(update, context):
 
 dispatcher.add_handler(CommandHandler('members_dict', members_dict), group=1)
 
+# /cfm_ICs_dict
+@send_typing_action
+def cfm_ICs_dict(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.effective_message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+        return
+    # if theres no other issue
+    else:
+        _cfm_ICs_dict = context.bot_data['cfm_ICs']
+        update.message.reply_text(text= str(_cfm_ICs_dict))
+
+dispatcher.add_handler(CommandHandler('cfm_ICs_dict', cfm_ICs_dict), group=1)
+
+# /bday_ICs_dict
+@send_typing_action
+def bday_ICs_dict(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.effective_message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+        return
+    # if theres no other issue
+    else:
+        _bday_ICs_dict = context.bot_data['bday_ICs']
+        update.message.reply_text(text= str(_bday_ICs_dict))
+
+dispatcher.add_handler(CommandHandler('bday_ICs_dict', bday_ICs_dict), group=1)
+
+# /lib_limit
+@send_typing_action
+def lib_limit(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.effective_message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+        return
+    # if theres no other issue
+    else:
+        limit = context.bot_data['library']['limit']
+        update.message.reply_text(text= str(limit))
+
+dispatcher.add_handler(CommandHandler('lib_limit', lib_limit), group=1)
+
+# /change_lib_limit
+@send_typing_action
+def change_lib_limit(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.effective_message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.effective_message.reply_text(text=middle_of_action_msg)
+        return
+    # if theres no other issue
+    else:
+        try:
+            new_limit = int(context.args[0])
+        except ValueError:
+            update.message.reply_text(text= str(not_integer_error))
+            pass
+        context.bot_data['library']['limit'] = new_limit
+        update.message.reply_text(text= limit_change_msg.format(new_limit))
+
+dispatcher.add_handler(CommandHandler('change_lib_limit', change_lib_limit), group=1)
+
 # /coders_list
 @send_typing_action
 def coders_list(update, context):
@@ -803,23 +888,119 @@ def make_admin(update, context):
             return
 
         else:
-            chat_id = int(args[0])
+            if not is_chat_id(args[0]):
+                update.message.reply_text(text=not_chat_id_error)
+                return
+            else:
+                chat_id = int(args[0])
+            current_perm = get_user_permissions(chat_id, context)
             # checks if the person is a registered member
             if not tuple(context.bot_data['members'].values()).__contains__(chat_id):
                 update.message.reply_text(text=not_exist_error)
                 return
-            # checks if the person is alraedy an admin
-            elif tuple(context.bot_data['admins'].values()).__contains__(chat_id):
-                update.message.reply_text(text=already_admin_msg)
+            # checks if the person is already an admin
+            elif check_permission(current_perm, 'cfm_IC'):
+                update.message.reply_text(text=perms_present)
                 return
             # if no other issues
             else:
                 username = get_key_from_value(chat_id, context.bot_data['members'])
                 context.bot_data['admins'][username] = chat_id
-                context.bot_data['permissions_change_msgd'].append(chat_id)
+                if not context.bot_data['permissions_changed'].__contains__(chat_id):
+                    context.bot_data['permissions_changed'].append(chat_id)
                 update.message.reply_text(text= add_admin_fin.format(username))
 
 dispatcher.add_handler(CommandHandler('make_admin', make_admin), group=1)
+
+# /make_cfm
+@send_typing_action
+def make_cfm(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+        return
+    # check the content of the args passed in
+    else:
+        args = context.args
+        if not len(args) == 1:
+            update.message.reply_text(text=one_arg_error)
+            return
+
+        else:
+            if not is_chat_id(args[0]):
+                update.message.reply_text(text=not_chat_id_error)
+                return
+            else:
+                chat_id = int(args[0])
+            current_perm = get_user_permissions(chat_id, context)
+            # checks if the person is a registered member
+            if not tuple(context.bot_data['members'].values()).__contains__(chat_id):
+                update.message.reply_text(text=not_exist_error)
+                return
+            # checks if the person is already an admin
+            elif check_permission(current_perm, 'cfm_IC'):
+                update.message.reply_text(text=perms_present)
+                return
+            # if no other issues
+            else:
+                username = get_key_from_value(chat_id, context.bot_data['members'])
+                context.bot_data['cfm_ICs'][username] = chat_id
+                if not context.bot_data['permissions_changed'].__contains__(chat_id):
+                    context.bot_data['permissions_changed'].append(chat_id)
+                update.message.reply_text(text= add_perms_fin.format('cfm_IC', username))
+
+dispatcher.add_handler(CommandHandler('make_cfm', make_cfm), group=1)
+
+# /make_bday
+@send_typing_action
+def make_bday(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+        return
+    # check the content of the args passed in
+    else:
+        args = context.args
+        if not len(args) == 1:
+            update.message.reply_text(text=one_arg_error)
+            return
+
+        else:
+            if not is_chat_id(args[0]):
+                update.message.reply_text(text=not_chat_id_error)
+                return
+            else:
+                chat_id = int(args[0])
+            current_perm = get_user_permissions(chat_id, context)
+            # checks if the person is a registered member
+            if not tuple(context.bot_data['members'].values()).__contains__(chat_id):
+                update.message.reply_text(text=not_exist_error)
+                return
+            # checks if the person is already an admin
+            elif check_permission(current_perm, 'bday_IC'):
+                update.message.reply_text(text=perms_present)
+                return
+            # if no other issues
+            else:
+                username = get_key_from_value(chat_id, context.bot_data['members'])
+                context.bot_data['bday_ICs'][username] = chat_id
+                if not context.bot_data['permissions_changed'].__contains__(chat_id):
+                    context.bot_data['permissions_changed'].append(chat_id)
+                update.message.reply_text(text= add_perms_fin.format('bday_IC', username))
+
+dispatcher.add_handler(CommandHandler('make_bday', make_bday), group=1)
 
 # /remove_member
 @send_typing_action
@@ -889,6 +1070,76 @@ def remove_admin(update, context):
                 update.message.reply_text(text= remov_user_fin.format(username, 'Admins'))
 
 dispatcher.add_handler(CommandHandler('remove_admin', remove_admin), group=1)
+
+# /remove_cfm
+@send_typing_action
+def remove_cfm(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+        return
+    # if authentication goes through, check validity
+    else:
+        args = context.args # returns a list of strings        
+        # check if it is a single word passed in
+        if not len(args) == 1:
+            update.message.reply_text(text= remove_user_fail)
+            return
+        # make sure that there is at least one arg passed in 
+        else:
+            username = args[0]
+            # check if such member exists
+            if not tuple(context.bot_data['cfm_ICs'].keys()).__contains__(username):
+                update.message.reply_text(text=remove_not_exist.format('cfm_IC', username))
+                return
+            # if the input is correct
+            else:
+                context.bot_data['permissions_changed'].append(context.bot_data['cfm_ICs'][username])
+                context.bot_data['cfm_ICs'].pop(username)
+                update.message.reply_text(text= remov_user_fin.format(username, 'cfm_IC'))
+
+dispatcher.add_handler(CommandHandler('remove_cfm', remove_cfm), group=1)
+
+# /remove_bday
+@send_typing_action
+def remove_bday(update, context):
+    # for easier access to user data
+    user_data = context.user_data
+    # user must access backend first
+    if not user_data['status']['backend']:
+        update.message.reply_text(text=backend_init_fail)
+        return
+    # dont run command if the user is currently doing an action
+    elif user_data['status']['action']:
+        update.message.reply_text(text=middle_of_action_msg)
+        return
+    # if authentication goes through, check validity
+    else:
+        args = context.args # returns a list of strings        
+        # check if it is a single word passed in
+        if not len(args) == 1:
+            update.message.reply_text(text= remove_user_fail)
+            return
+        # make sure that there is at least one arg passed in 
+        else:
+            username = args[0]
+            # check if such member exists
+            if not tuple(context.bot_data['bday_ICs'].keys()).__contains__(username):
+                update.message.reply_text(text=remove_not_exist.format('bday_IC', username))
+                return
+            # if the input is correct
+            else:
+                context.bot_data['permissions_changed'].append(context.bot_data['bday_ICs'][username])
+                context.bot_data['bday_ICs'].pop(username)
+                update.message.reply_text(text= remov_user_fin.format(username, 'bday_IC'))
+
+dispatcher.add_handler(CommandHandler('remove_bday', remove_bday), group=1)
 
 # /quit
 @send_typing_action
