@@ -21,7 +21,7 @@ import emojis
 
 print('initialising')
 # initialises the updater object
-updater = Updater(token=testing_token, use_context=True, persistence=False)
+updater = Updater(token=live_token, use_context=True, persistence=False)
 
 dispatcher = updater.dispatcher # for quicker access to the dispatcher object
 jobqueuer = updater.job_queue # for quicker access to JobQueue object
