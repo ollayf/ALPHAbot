@@ -3,7 +3,7 @@
 - creates partitions in the menus
 - Patch updates and patch notes
 - Version and bot info
-- reset bot
+- reset bot using argsparse
 
 ================ ALPHAbot v3.2.5 =====================
 - Removed the bot_print for user intiation

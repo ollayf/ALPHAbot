@@ -11,35 +11,36 @@ import logging
 import requests
 import re
 
-def get_input(question, success_msg=False, fail_msg=False, cancel_msg=False, boolean=True):
-    '''
-    Ask the user the question
-    :param question: The question to ask the user
-    :param boolean: Whether the options are bolean, i.e. y/n
-    :param success_msg: Optional message to print if there is a success
-    :param fail_msg: Optional message to print if answer is no
-    :param cancel_msg: Optional message to send if the question is cancelled
-    '''
-    confirmed = False
-    question += '\n'
-    while not confirmed:
-        answer = input(question)
-
-        if answer == 'y':
-            confirmed = True
-            answer = True
-            if bool(success_msg):
-                print(success_msg)
+# deprecated
+# def get_input(question, success_msg=False, fail_msg=False, cancel_msg=False, boolean=True):
+#     '''
+#     Ask the user the question
+#     :param question: The question to ask the user
+#     :param boolean: Whether the options are bolean, i.e. y/n
+#     :param success_msg: Optional message to print if there is a success
+#     :param fail_msg: Optional message to print if answer is no
+#     :param cancel_msg: Optional message to send if the question is cancelled
+#     '''
+#     confirmed = False
+#     question += '\n'
+#     while not confirmed:
+#         answer = input(question)
         
-        elif answer == 'n':
-            confirmed = True
-            answer = False
-            if bool(fail_msg):
-                print(fail_msg)
+#         if answer == 'y':
+#             confirmed = True
+#             answer = True
+#             if bool(success_msg):
+#                 print(success_msg)
         
-        else:
-            print('invalid input. Please just input y or n')
-    return answer
+#         elif answer == 'n':
+#             confirmed = True
+#             answer = False
+#             if bool(fail_msg):
+#                 print(fail_msg)
+        
+#         else:
+#             print('invalid input. Please just input y or n')
+#     return answer
 
             
 def menu_is_open(user_data):
@@ -709,20 +710,21 @@ def is_chat_id(chat_id, return_type=False):
     else: 
         return result
 
-# Initiating bot functions
-def reset_bot(password=False):
-    '''
-    Checks if the user wants to reset the bot
-    Returns True if the bot is reset else False
-    '''
-    result = False
-    # only asks the user if there is a saved state
-    if os.path.isfile(PICKLE_FILE):
-        if get_input('Do you want to reset the bot? y/n', False, 'Ok carrying on last saved version'):
-            if get_input('Are you sure you want to reset it?', 'Bot is being reset', 'Phew close one ay?'):
-                os.remove(PICKLE_FILE)
-                result = True
-    return result
+# Deprecated
+# # Initiating bot functions
+# def reset_bot(password=False):
+#     '''
+#     Checks if the user wants to reset the bot
+#     Returns True if the bot is reset else False
+#     '''
+#     result = False
+#     # only asks the user if there is a saved state
+#     if os.path.isfile(PICKLE_FILE):
+#         if get_input('Do you want to reset the bot? y/n', False, 'Ok carrying on last saved version'):
+#             if get_input('Are you sure you want to reset it?', 'Bot is being reset', 'Phew close one ay?'):
+#                 os.remove(PICKLE_FILE)
+#                 result = True
+#     return result
 
     
 def update_bot_data(bot_data):

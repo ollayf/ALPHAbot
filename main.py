@@ -14,13 +14,18 @@ import logging
 import random
 from pytz import timezone
 import emojis
+import argparse
 
 ####################
 # INITIALISING BOT #
 ####################
 
-# asks user if they want to reset the bot
-reset_bot()
+# checks if user wants to reset the bot
+parser = argparse.ArgumentParser(description='Runs the ALPHAbot service')
+parser.add_argument('r', 'reset', type=bool, help='Whether you want the bot to be reset before starting.')
+args = parser.parse_args()
+if args.reset:
+    os.remove(PICKLE_FILE)
 
 # Setting up persistence based on when it was last reset
 persistence = PicklePersistence(PICKLE_FILE, store_user_data=False)
