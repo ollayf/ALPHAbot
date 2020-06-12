@@ -57,9 +57,36 @@ Coming:grinning::
 
 CMI :cry: :"""
 
+PERSISTENT_VARS = ['cfm', 'events', 'library', 'birthdays']
+VERSION_UPDATES = './version_updates.md'
+PICKLE_FILE = 'storage/bot_memory.pickle'
+
+BOT_DESCRIPTION = '''\
+Hello! My name is ALPHAbot! My job is to assist in the administrative efforts of Alpha LG. Please cooperate with me as much \
+as you can :)!!
+
+What can you do with me?
+As a normal member the simple commands you can do are:
+/events
+/library
+/feedback (Though you would need to start a convo with me to use this)
+At any time, use /help to check the list of possible commands for you. I hope we would get to know each other more
+as we interact with each other!
+
+P.S. ALL COMMANDS work SEAMLESSLY on pm and in group as long as you have started me before. So feel free to use me whenever and
+whereever you want to! :)
+'''
+
 # only this bot_data attribute needs to be a dict object
 # the rest must be defaultdict object
 default_bot_data = {
+'bot_info': {
+    'version_number': None, # There is a script to parse the version updates textfile to get this
+    'patch_notes': None,
+    'description': BOT_DESCRIPTION,
+    'creator': 'Yu Fei',
+    'coders': 'ollayf'
+},
 'chat_id': ALPHA_CHAT_ID,
 'cfm_ICs': cfm_ICs,
 'bday_ICs': bday_ICs,
@@ -186,7 +213,7 @@ in the first place...'
 remove_user_fail = 'Pls la you give me wrong format. Should be:/remove_function <member username>'
 remove_not_exist = '{}: {} does not exist'
 quit_fail_msg = 'bruh there\'s nothing to quit lol'
-call_format_error = 'Wrong format inputted. It should be /start_call <url>'
+call_format_error = 'Wrong format inputted. It should be /start_call [url]'
 invalid_call_url = 'Invalid url input'
 call_not_started_msg = 'There are no ongoing calls currently... Wake up your idea pls'
 not_reg_platform_error = 'This is an unregistered call platform, please contact yu fei to update the code'
@@ -248,22 +275,27 @@ possible_commands = {
     'sleep' : { # the default mode
         'events': 'shows the list of upcoming events',
         'library': 'opens up a library of recent good teachings and articles',
+        'patch_notes': 'Shows the patch notes of the last update',
         'start': 'start a conversation with me :)',
-        'start_call': '/start_call <url> to start a call. \
-Sends a message to the group that the call is on, don\'t say bojio.(only available for admins)',
-        'end_call': 'Informs me that the call is ended, aka stopping the spam (only available for admins)',
+        'part1': 'ONLY AVAILABLE FOR ADMINS',
+        'start_call': '/start_call [url] to start a call. \
+Sends a message to the group that the call is on, don\'t say bojio.',
+        'end_call': 'Informs me that the call is ended, aka stopping the spam',
         'base_menu': ''
         },
 
     'started' : { # the mode activated after /start
         'events': 'shows the list of upcoming events',
         'library': 'opens up a library of recent good teachings and articles',
-        'start_call': '/start_call <url> to start a call.\
+        'patch_notes': 'Shows the patch notes of the last update',
+        'feedback': 'opens up the floor for a good ol\' one sided roasting session. Come at me bro',
+        'part1': 'FOR ADMINS ONLY',
+        'start_call': '/start_call [url] to start a call.\
 Sends a message to the group that the call is on, don\'t say bojio.',
         'end_call': 'Informs me that the call is ended, aka stopping the spam',
-        'feedback': 'opens up the floor for a good ol\' one sided roasting session. Come at me bro',
         'admin_menu': 'Opens the menu of functions for admins',
-        'cfm_settings': 'Opens the menu of function for the confirmation IC',
+        'cfm_settings': 'Opens the menu of functions for the confirmation IC',
+        'bday_settings': 'Opens the menu of functions for the birthday IC',
         'end': 'ends the conversation with me :(',
         'base_menu': ''
         },
@@ -283,14 +315,19 @@ Sends a message to the group that the call is on, don\'t say bojio.',
         'add_bday': 'adds a birthday into the memory',
         'remove_bday': 'removes a birthday stored',
         'default_bdays': 'sets the default list of bdays',
-        'clear_bdays': 'clear all bdays that are currently saved in system'
+        'clear_bdays': 'clear all bdays that are currently saved in system',
+        'quit': 'exits the admin menu',
+        'end': 'ends the conversation with me :(',
+        'base_menu': ''
         },
 
     'admin_menu' : { # the mode activated after /admin_menu
         'events': 'shows the list of upcoming events',
         'library': 'opens up a library of recent good teachings and articles',
-        'broadcast_msg': '/broadcast <msg> and the <msg> will be sent to all members',
+        'patch_notes': 'Shows the patch notes of the last update',
+        'broadcast_msg': '/broadcast [msg] and the [msg] will be sent to all members',
         # for events handling
+        'part1': 'FOR EVENTS HANDLING',
         'add_event': 'create a new event. Input data step by step with me. The event will \
 be created when done',
         'add_whole_event': 'add a whole event with the correct. If the format is wrong, the event will\
@@ -298,6 +335,7 @@ be rejected.',
         'del_event': 'delete a currently existing event',
         #'clear_events': 'delete all events that are currently stored',
         # for library handling
+        'part2': 'FOR LIBRARY HANDLING',
         'add_teaching': 'create a new teaching step by step. I will help you with the formatting',
         'add_whole_teaching': 'add a whole teaching with the correct formatting',
         'del_teaching': 'delete a currently existing teaching',
@@ -307,17 +345,20 @@ be rejected.',
         'base_menu': ''
         },
     'backend': { # the mode activated after /backend
+        'part1': 'FOR VIEWING STATUS',
         'events_dict': 'shows the events in the dictionary form read by python',
         'lib_dict': 'shows the teachings in the dictionary form read by python',
         'bday_dict': 'shows the birthdays in the dictionary form read by python', # new
         'perm_events_dict': 'shows the permanent events in the dictionary form read by python', # new
         'lib_limit': 'shows the limit on the library', 
         'change_lib_limit': 'changes the library limit', 
+        'part2': 'USERS DICTS',
         'admins_dict': 'shows the list of members with admins permissions',
         'cfm_ICs_dict': 'shows the dict of members with cfm_IC permissions', 
         'bday_ICs_dict': 'shows the dict of members with bday_IC permissions', 
         'members_dict': 'shows the list of members', 
         'coders_list': 'shows the list of members with coders permissions',
+        'part3': 'FOR CHANGING PERMISSIONS',
         'make_admin': 'makes a currently registered member into an admin by passing in the \
 member\'s chat_id',
         'remove_member': 'removes member from the list of members. I.E removing from broadcast\

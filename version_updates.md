@@ -1,3 +1,10 @@
+================ ALPHAbot v3.3.0 =====================
+- Pickle Persistence included, save events and library
+- creates partitions in the menus
+- Patch updates and patch notes
+- Version and bot info
+- reset bot
+
 ================ ALPHAbot v3.2.5 =====================
 - Removed the bot_print for user intiation
 - Improved backend abilities:

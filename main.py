@@ -7,7 +7,7 @@ to be run to start the bot and keep it running indefinitely
 import telegram
 import datetime
 import time
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PicklePersistence
 from envs import *
 from utils import *
 import logging
@@ -19,23 +19,28 @@ import emojis
 # INITIALISING BOT #
 ####################
 
+# asks user if they want to reset the bot
+reset_bot()
+
+# Setting up persistence based on when it was last reset
+persistence = PicklePersistence(PICKLE_FILE, store_user_data=False)
+# setting up patch notes and bot version
+default_bot_data['bot_info']['version_number'], default_bot_data['bot_info']['patch_notes'] = get_bot_info(VERSION_UPDATES)
+
 print('initialising')
 # initialises the updater object
-updater = Updater(token=live_token, use_context=True, persistence=False)
-
+updater = Updater(token=live_token, use_context=True, persistence=persistence)
 dispatcher = updater.dispatcher # for quicker access to the dispatcher object
 jobqueuer = updater.job_queue # for quicker access to JobQueue object
-
-# alpha_lib = parseMD('alpha_lib.md', True)
-# events = parseMD('events.md', True)
-# members = parseMD('members.md', True)
 
 # set bot_data to default if it does not already exist
 if dispatcher.bot_data == {}:
     dispatcher.bot_data = default_bot_data
     print('bot_data set to default')
+# if there is a saved version of alphabot
 else:
     print('there is a saved version of bot_data already')
+    update_bot_data(dispatcher.bot_data)
 
 # logs the problems in log.md file with level INFO
 logging.basicConfig(filename='storage/error_log.md', format='%(asctime)s - %(name)s - \
@@ -106,6 +111,36 @@ dispatcher.add_handler(MessageHandler(Filters.text, process_members), group=0) #
 # CAN RUN IN ANY MODE #
 #######################
 
+# /patch_notes
+@send_typing_action
+def patch_notes(update, context):
+    # for easier access to bot_data
+    patch_notes = context.bot_data['bot_info']['patch_notes']
+    # if events has stuff
+    if patch_notes != {}:
+        update.message.reply_text(text=patch_notes, parse_mode=ParseMode.HTML)
+
+    # if patch notes is empty
+    else:
+        update.message.reply_text(text='Patch notes currently unavailable')
+
+dispatcher.add_handler(CommandHandler('patch_notes', patch_notes), group=1)
+
+# /info
+@send_typing_action
+def info(update, context):
+    # for easier access to bot_data
+    _info = context.bot_data['bot_info']['description']
+    # if events has stuff
+    if _info != {}:
+        update.message.reply_text(text=_info, parse_mode=ParseMode.HTML)
+
+    # if patch notes is empty
+    else:
+        update.message.reply_text(text='Bot info currently unavailable')
+
+dispatcher.add_handler(CommandHandler('info', info), group=1)
+
 # /help
 @send_typing_action
 def help(update, context):
@@ -124,9 +159,9 @@ def help(update, context):
         menu = create_menu(possible_commands, 'started')
     else: # in sleep mode
         menu = create_menu(possible_commands, 'sleep')
-    
+
     # send the menu out
-    update.message.reply_text(text=menu)
+    update.message.reply_text(text=menu, parse_mode=ParseMode.HTML)
 
 dispatcher.add_handler(CommandHandler('help', help), group=1)
 
@@ -515,7 +550,7 @@ def admin_session(update, context):
     else:
         context.user_data['status']['admin_menu'] = True
         menu = create_menu(possible_commands, 'admin_menu')
-        update.message.reply_text(text=menu.format(context.user_data['username']))
+        update.message.reply_text(text=menu.format(context.user_data['username']), parse_mode=ParseMode.HTML)
 
 dispatcher.add_handler(CommandHandler('admin_menu', admin_session), group=1)
 

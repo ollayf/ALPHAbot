@@ -9,6 +9,38 @@ from telegram import ParseMode
 from envs import *
 import logging
 import requests
+import re
+
+def get_input(question, success_msg=False, fail_msg=False, cancel_msg=False, boolean=True):
+    '''
+    Ask the user the question
+    :param question: The question to ask the user
+    :param boolean: Whether the options are bolean, i.e. y/n
+    :param success_msg: Optional message to print if there is a success
+    :param fail_msg: Optional message to print if answer is no
+    :param cancel_msg: Optional message to send if the question is cancelled
+    '''
+    confirmed = False
+    question += '\n'
+    while not confirmed:
+        answer = input(question)
+
+        if answer == 'y':
+            confirmed = True
+            answer = True
+            if bool(success_msg):
+                print(success_msg)
+        
+        elif answer == 'n':
+            confirmed = True
+            answer = False
+            if bool(fail_msg):
+                print(fail_msg)
+        
+        else:
+            print('invalid input. Please just input y or n')
+    return answer
+
             
 def menu_is_open(user_data):
     '''
@@ -524,9 +556,12 @@ def create_menu(commands_dict, menu):
         # ignore the base_menu
         if key == 'base_menu':
             continue
-        
-        # create a menu based on the keys and values
-        displayed_menu += f'/{key} -- {commands_dict[key]}\n'
+        # add partitions in the menu for easier viewing
+        elif key.__contains__('part'):
+            displayed_menu += f'<u><b>{commands_dict[key]}</b></u>\n'
+        else:
+            # create a menu based on the keys and values
+            displayed_menu += f'/{key} -- {commands_dict[key]}\n'
     
     return displayed_menu
 
@@ -673,3 +708,72 @@ def is_chat_id(chat_id, return_type=False):
         return result, id_type
     else: 
         return result
+
+# Initiating bot functions
+def reset_bot(password=False):
+    '''
+    Checks if the user wants to reset the bot
+    Returns True if the bot is reset else False
+    '''
+    result = False
+    # only asks the user if there is a saved state
+    if os.path.isfile(PICKLE_FILE):
+        if get_input('Do you want to reset the bot? y/n', False, 'Ok carrying on last saved version'):
+            if get_input('Are you sure you want to reset it?', 'Bot is being reset', 'Phew close one ay?'):
+                os.remove(PICKLE_FILE)
+                result = True
+    return result
+
+    
+def update_bot_data(bot_data):
+    '''
+    Used to update variables in the bot other than the persistent variables
+    - cfm
+    - library
+    - events
+    - birthday
+    '''
+
+    for key in tuple(default_bot_data.keys()):
+        if key in PERSISTENT_VARS:
+            continue
+        else:
+            # ensure protection for mutable objects
+            if isinstance(default_bot_data[key], (list, dict)):
+                bot_data[key] = default_bot_data[key].copy() 
+            else: 
+                bot_data[key] = default_bot_data[key]
+        
+    print(f'Bot successfully updated excluding {PERSISTENT_VARS}')
+
+def get_bot_info(version_updates):
+    '''
+    Used to parse the version updates file to get the current version of ALPHAbot and its patch notes
+    returns the bot version as a string
+    '''
+    section = 0
+    patch_notes = ''
+    with open(version_updates, 'r') as updates:
+        lines = updates.readlines()
+        for line in lines:
+            # stops after it reaches the end of this version section
+            if section == 2:
+                break
+            elif '=' in line:
+                section += 1
+                # gets the version number from this line
+                if section == 1:
+                    version_number = re.findall('\d.\d.\d', line)[0]
+                    patch_notes = f'<u>ALPHAbot Version {version_number} Patch Notes:</u>\n'
+                continue
+            # skip lines that are empty
+            elif line.split() == []:
+                continue
+            elif line.split()[0] == '-':
+                info = '<b>' + ' '.join(line.split()[1:]) + '</b>\n'
+                patch_notes += info
+
+    print('Version number: ', version_number)
+    print('Patch notes: ', patch_notes)
+
+    return version_number, patch_notes
