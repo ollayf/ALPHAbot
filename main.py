@@ -22,9 +22,9 @@ import argparse
 
 # checks if user wants to reset the bot
 parser = argparse.ArgumentParser(description='Runs the ALPHAbot service')
-parser.add_argument('r', 'reset', type=bool, help='Whether you want the bot to be reset before starting.')
+parser.add_argument('reset', type=bool, help='Whether you want the bot to be reset before starting.')
 args = parser.parse_args()
-if args.reset:
+if args.reset and os.path.exists(PICKLE_FILE):
     os.remove(PICKLE_FILE)
 
 # Setting up persistence based on when it was last reset

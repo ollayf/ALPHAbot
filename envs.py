@@ -7,13 +7,13 @@ from telegram.ext import Defaults
 from telegram import ParseMode
 
 # LGinfo03bot (currently used bot)
-live_token = '832661637:AAFVs-8z6xE7S-hyqSWiR07_oSSoqSN1vxg'
-live_username = 'LGinfo03bot'
+live_token = '1929924574:AAEEzVSHRRHTJmqslsA0chEl1mzkpfOUjZg'
+live_username = 'E2InfoBot'
 # ABbot (testing bot)
-testing_token = '1929924574:AAEEzVSHRRHTJmqslsA0chEl1mzkpfOUjZg'
-testing_username = 'E2InfoBot'
+testing_token = '1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0'
+testing_username = 'ABLGbot'
 
-ALPHA_CHAT_ID = -1001479454631
+ALPHA_CHAT_ID = -530924757
 BOT_TEST_ID = -1001200591015
 
 coders = [333647246]
@@ -160,7 +160,7 @@ sleep. Next time please remember to end me when not in use.\nYou can also use \
 first_use = 'Permissions and data set for you'
 
 start_msg = 'Eh sup {}! yeboi R2-E2 here. /help to display the list of commands you can use.'
-alr_started_msg = 'Eh sup {}! yeboi R2-E2 he-- wait aren\'t we alr in a conversation??!'
+alr_started_msg = 'Eh sup {}! yeboi ALPHAbot he-- wait aren\'t we alr in a conversation??!'
 
 first_start_msg = 'Welcome {}! Is this your first time? Hi my name is R2-E2. I store important \
 information and do particular administrative tasks to aide the running of LG. However just \

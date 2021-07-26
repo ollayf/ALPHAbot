@@ -1,4 +1,2 @@
-cd venv
-source bin/activate
-cd ..
+source venv/bin/activate
 python3.7 main.py False &

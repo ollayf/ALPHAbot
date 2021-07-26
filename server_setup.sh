@@ -7,8 +7,6 @@
 # $ ./server_setup.sh
 
 python3.7 -m venv venv
-cd venv
-source bin/activate
-cd ..
+source venv/bin/activate
 pip install -r requirements.txt
 chmod +x ./start.sh ./reset_start.sh
