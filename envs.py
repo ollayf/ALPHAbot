@@ -10,8 +10,8 @@ from telegram import ParseMode
 live_token = '832661637:AAFVs-8z6xE7S-hyqSWiR07_oSSoqSN1vxg'
 live_username = 'LGinfo03bot'
 # ABbot (testing bot)
-testing_token = '1081436727:AAEDUCJ_kV9Uy2utZN_HWQ7QuSGeU4L6Uo0'
-testing_username = 'ABLGbot'
+testing_token = '1929924574:AAEEzVSHRRHTJmqslsA0chEl1mzkpfOUjZg'
+testing_username = 'E2InfoBot'
 
 ALPHA_CHAT_ID = -1001479454631
 BOT_TEST_ID = -1001200591015
@@ -62,7 +62,7 @@ VERSION_UPDATES = './version_updates.md'
 PICKLE_FILE = 'storage/bot_memory.pickle'
 
 BOT_DESCRIPTION = '''\
-Hello! My name is ALPHAbot! My job is to assist in the administrative efforts of Alpha LG. Please cooperate with me as much \
+Hello! My name is R2-E2! My job is to assist in the administrative efforts of NUS E2. Please cooperate with me as much \
 as you can :)!!
 
 What can you do with me?
@@ -159,10 +159,10 @@ sleep. Next time please remember to end me when not in use.\nYou can also use \
 
 first_use = 'Permissions and data set for you'
 
-start_msg = 'Eh sup {}! yeboi ALPHAbot here. /help to display the list of commands you can use.'
-alr_started_msg = 'Eh sup {}! yeboi ALPHAbot he-- wait aren\'t we alr in a conversation??!'
+start_msg = 'Eh sup {}! yeboi R2-E2 here. /help to display the list of commands you can use.'
+alr_started_msg = 'Eh sup {}! yeboi R2-E2 he-- wait aren\'t we alr in a conversation??!'
 
-first_start_msg = 'Welcome {}! Is this your first time? Hi my name is ALPHAbot. I store important \
+first_start_msg = 'Welcome {}! Is this your first time? Hi my name is R2-E2. I store important \
 information and do particular administrative tasks to aide the running of LG. However just \
 like you I am not perfect, so please do not hesitate to give me feedback on how I can serve you \
 and the LG better. You can use \n/feedback to give me your feedback\n\n\
