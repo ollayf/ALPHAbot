@@ -276,6 +276,7 @@ possible_commands = {
         'events': 'shows the list of upcoming events',
         'library': 'opens up a library of recent good teachings and articles',
         'patch_notes': 'Shows the patch notes of the last update',
+        'info': 'Find out more about me and what I do!',
         'start': 'start a conversation with me :)',
         'part1': 'ONLY AVAILABLE FOR ADMINS',
         'start_call': '/start_call [url] to start a call. \
@@ -288,6 +289,7 @@ Sends a message to the group that the call is on, don\'t say bojio.',
         'events': 'shows the list of upcoming events',
         'library': 'opens up a library of recent good teachings and articles',
         'patch_notes': 'Shows the patch notes of the last update',
+        'info': 'Find out more about me and what I do!',
         'feedback': 'opens up the floor for a good ol\' one sided roasting session. Come at me bro',
         'part1': 'FOR ADMINS ONLY',
         'start_call': '/start_call [url] to start a call.\
@@ -325,6 +327,7 @@ Sends a message to the group that the call is on, don\'t say bojio.',
         'events': 'shows the list of upcoming events',
         'library': 'opens up a library of recent good teachings and articles',
         'patch_notes': 'Shows the patch notes of the last update',
+        'info': 'Find out more about me and what I do!',
         'broadcast_msg': '/broadcast [msg] and the [msg] will be sent to all members',
         # for events handling
         'part1': 'FOR EVENTS HANDLING',

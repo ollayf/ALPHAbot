@@ -1,3 +1,7 @@
+================ ALPHAbot v3.3.1 =====================
+- updated the menu
+- removed checking reset using input
+
 ================ ALPHAbot v3.3.0 =====================
 - Pickle Persistence included, save events and library
 - creates partitions in the menus
