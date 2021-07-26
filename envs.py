@@ -23,9 +23,8 @@ cfm_ICs = {'Ryan': 851265766, 'ollayff':678686611}
 # members = {'Hosea': 333647246, 'vernjoshua': 553175669, 'Ivan': 299385070,\
 # 'Yu Fei': 678686611, 'Gbalo': 326819149, 'Zames Tan :sunglasses:': 113200946,\
 # 'Ryan': 851265766}
-admins = {'ollayf':333647246, 'zamestan': 113200946, 'Yi Han': 447584594, 'Ivan_Ang':299385070}
-members = {'ollayff':678686611, 'ollayf':333647246, 'zamestan': 113200946, 'Yi Han': 447584594, 'Ivan_Ang':299385070, \
-    'Ryan': 851265766}
+admins = {'ollayf':333647246}
+members = {'ollayff':678686611, 'ollayf':333647246, 'kelsng': 181531399}
 
 # parse mode for bolding,
 defaults_updater = Defaults(quote=True, parse_mode=ParseMode.HTML)
